@@ -10,107 +10,79 @@
         .gold-text { color: #b8860b; }
         .bg-gold { background-color: #b8860b; }
         .expandable-details-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
-        .detail-toggle-chk:checked + .lbl-toggle-details + .expandable-details-content { max-height: 800px; }
-        .lbl-toggle-details { cursor: pointer; display: block; text-align: center; padding: 1rem; background: #b8860b; color: white; font-weight: bold; }
+        .detail-toggle-chk:checked ~ .expandable-details-content { max-height: 1500px; }
+        .lbl-toggle-details { cursor: pointer; display: block; text-align: center; padding: 1rem; border: 2px solid #000; font-weight: bold; margin-top: 1rem; }
     </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body class="font-sans text-gray-900">
 
-<nav class="fixed top-0 w-full bg-white z-[100] p-6 flex justify-between items-center border-b border-gray-100 shadow-sm">
+<nav class="fixed w-full bg-white z-50 p-6 flex justify-between items-center border-b shadow-sm">
     <div class="flex items-center gap-6">
         <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-3xl">☰</button>
-        <div class="text-2xl font-bold tracking-widest gold-text">SUMMER HOMES</div>
+        <span class="text-2xl font-bold tracking-widest gold-text">SUMMER HOMES</span>
     </div>
-    <div class="hidden md:flex gap-6">
-        <a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook text-2xl"></i></a>
-        <a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok text-2xl"></i></a>
-        <a href="https://t.me/yosephab"><i class="fab fa-telegram text-2xl"></i></a>
-        <a href="https://wa.me/251983796622"><i class="fab fa-whatsapp text-2xl"></i></a>
+    <div class="hidden md:flex gap-6 text-2xl">
+        <a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a>
+        <a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok"></i></a>
+        <a href="https://t.me/yosephab"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me/251983796622"><i class="fab fa-whatsapp"></i></a>
     </div>
 </nav>
 
-<div id="mobile-menu" class="hidden fixed top-24 w-full bg-white z-[90] p-8 text-center border-b">
-    <a href="#home" class="block py-6 text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
-    <a href="#about" class="block py-6 text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Us</a>
-    <a href="#listings" class="block py-6 text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Listings</a>
-    <a href="#gallery" class="block py-6 text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Gallery</a>
+<div id="mobile-menu" class="hidden fixed top-24 w-full bg-white z-40 p-8 text-center border-b">
+    <a href="#listings" class="block py-4 text-xl">Listings</a>
+    <a href="#gallery" class="block py-4 text-xl">Gallery</a>
+    <a href="#about" class="block py-4 text-xl">About</a>
 </div>
 
-<header id="home" class="h-[70vh] bg-cover bg-center mt-24" style="background-image: url('hero.jpg');"></header>
-
-<section id="listings" class="p-6 md:p-20">
-    <h2 class="text-6xl font-bold mb-20 text-center gold-text">Our Listings</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-        <div class="border shadow-lg p-4">
-            <img src="apt1.jpg" class="w-full h-80 object-cover mb-4">
-            <h4 class="text-2xl font-bold mb-2">Executive Suite</h4>
-            <div class="flex gap-4 mb-4 text-gray-600"><span><i class="fas fa-bed"></i> 3</span> <span><i class="fas fa-bath"></i> 2</span> <span><i class="fas fa-expand-arrows-alt"></i> 182.64 m²</span></div>
-            <div class="flex gap-2 mb-4">
-                <a href="tel:0983796622" class="bg-black text-white px-4 py-2 text-sm">Call</a>
-                <a href="https://wa.me/251983796622" class="bg-green-600 text-white px-4 py-2 text-sm">WhatsApp</a>
-                <a href="https://t.me/yosephab" class="bg-blue-600 text-white px-4 py-2 text-sm">Telegram</a>
-            </div>
-            <input type="checkbox" id="t1" class="hidden detail-toggle-chk">
-            <label for="t1" class="lbl-toggle-details">View Details</label>
-            <div class="expandable-details-content border-t"><img src="aptf1.jpg" class="w-full mt-2"><p class="p-4 text-sm">Amenities: 24/7 Elevator, Parking, Standby Generator</p></div>
-        </div>
-        <div class="border shadow-lg p-4">
-            <img src="apt2.jpg" class="w-full h-80 object-cover mb-4">
-            <h4 class="text-2xl font-bold mb-2">Premium Apartment</h4>
-            <div class="flex gap-4 mb-4 text-gray-600"><span><i class="fas fa-bed"></i> 3</span> <span><i class="fas fa-bath"></i> 2</span> <span><i class="fas fa-expand-arrows-alt"></i> 168.91 m²</span></div>
-            <div class="flex gap-2 mb-4">
-                <a href="tel:0983796622" class="bg-black text-white px-4 py-2 text-sm">Call</a>
-                <a href="https://wa.me/251983796622" class="bg-green-600 text-white px-4 py-2 text-sm">WhatsApp</a>
-                <a href="https://t.me/yosephab" class="bg-blue-600 text-white px-4 py-2 text-sm">Telegram</a>
-            </div>
-            <input type="checkbox" id="t2" class="hidden detail-toggle-chk">
-            <label for="t2" class="lbl-toggle-details">View Details</label>
-            <div class="expandable-details-content border-t"><img src="aptf2.jpg" class="w-full mt-2"><p class="p-4 text-sm">Amenities: 24/7 Elevator, Parking, Standby Generator</p></div>
-        </div>
-        <div class="border shadow-lg p-4">
-            <img src="apt3.jpg" class="w-full h-80 object-cover mb-4">
-            <h4 class="text-2xl font-bold mb-2">Studio Suite</h4>
-            <div class="flex gap-4 mb-4 text-gray-600"><span><i class="fas fa-bed"></i> 1</span> <span><i class="fas fa-bath"></i> 1</span> <span><i class="fas fa-expand-arrows-alt"></i> 81.74 m²</span></div>
-            <div class="flex gap-2 mb-4">
-                <a href="tel:0983796622" class="bg-black text-white px-4 py-2 text-sm">Call</a>
-                <a href="https://wa.me/251983796622" class="bg-green-600 text-white px-4 py-2 text-sm">WhatsApp</a>
-                <a href="https://t.me/yosephab" class="bg-blue-600 text-white px-4 py-2 text-sm">Telegram</a>
-            </div>
-            <input type="checkbox" id="t3" class="hidden detail-toggle-chk">
-            <label for="t3" class="lbl-toggle-details">View Details</label>
-            <div class="expandable-details-content border-t"><img src="aptf3.jpg" class="w-full mt-2"><p class="p-4 text-sm">Amenities: 24/7 Elevator, Parking, Standby Generator</p></div>
-        </div>
-        <div class="border shadow-lg p-4">
-            <img src="apt4.jpg" class="w-full h-80 object-cover mb-4">
-            <h4 class="text-2xl font-bold mb-2">Modern Flat</h4>
-            <div class="flex gap-4 mb-4 text-gray-600"><span><i class="fas fa-bed"></i> 2</span> <span><i class="fas fa-bath"></i> 2</span> <span><i class="fas fa-expand-arrows-alt"></i> 134.85 m²</span></div>
-            <div class="flex gap-2 mb-4">
-                <a href="tel:0983796622" class="bg-black text-white px-4 py-2 text-sm">Call</a>
-                <a href="https://wa.me/251983796622" class="bg-green-600 text-white px-4 py-2 text-sm">WhatsApp</a>
-                <a href="https://t.me/yosephab" class="bg-blue-600 text-white px-4 py-2 text-sm">Telegram</a>
-            </div>
-            <input type="checkbox" id="t4" class="hidden detail-toggle-chk">
-            <label for="t4" class="lbl-toggle-details">View Details</label>
-            <div class="expandable-details-content border-t"><img src="aptf4.jpg" class="w-full mt-2"><p class="p-4 text-sm">Amenities: 24/7 Elevator, Parking, Standby Generator</p></div>
-        </div>
-        <div class="border shadow-lg p-4">
-            <img src="apt5.jpg" class="w-full h-80 object-cover mb-4">
-            <h4 class="text-2xl font-bold mb-2">Urban Home</h4>
-            <div class="flex gap-4 mb-4 text-gray-600"><span><i class="fas fa-bed"></i> 2</span> <span><i class="fas fa-bath"></i> 2</span> <span><i class="fas fa-expand-arrows-alt"></i> 111.37 m²</span></div>
-            <div class="flex gap-2 mb-4">
-                <a href="tel:0983796622" class="bg-black text-white px-4 py-2 text-sm">Call</a>
-                <a href="https://wa.me/251983796622" class="bg-green-600 text-white px-4 py-2 text-sm">WhatsApp</a>
-                <a href="https://t.me/yosephab" class="bg-blue-600 text-white px-4 py-2 text-sm">Telegram</a>
-            </div>
-            <input type="checkbox" id="t5" class="hidden detail-toggle-chk">
-            <label for="t5" class="lbl-toggle-details">View Details</label>
-            <div class="expandable-details-content border-t"><img src="aptf5.jpg" class="w-full mt-2"><p class="p-4 text-sm">Amenities: 24/7 Elevator, Parking, Standby Generator</p></div>
-        </div>
-    </div>
-</section>
+<main class="pt-32 p-6 md:p-20">
+    <section id="listings" class="grid md:grid-cols-3 gap-10">
+        <script>
+            const listings = [
+                {title: "Executive Suite", desc: "Premium master suite.", beds: 3, baths: 2, size: "182.64 m²", img: "apt1.jpg", plan: "aptf1.jpg", price: "12,900,000"},
+                {title: "Premium Apartment", desc: "Expansive scenic views.", beds: 3, baths: 2, size: "168.91 m²", img: "apt2.jpg", plan: "aptf2.jpg", price: "11,500,000"},
+                {title: "Studio Suite", desc: "Modern urban living.", beds: 1, baths: 1, size: "81.74 m²", img: "apt3.jpg", plan: "aptf3.jpg", price: "6,800,000"},
+                {title: "Modern Flat", desc: "Architectural excellence.", beds: 2, baths: 2, size: "134.85 m²", img: "apt4.jpg", plan: "aptf4.jpg", price: "9,200,000"},
+                {title: "Urban Home", desc: "Prime city location.", beds: 2, baths: 2, size: "111.37 m²", img: "apt5.jpg", plan: "aptf5.jpg", price: "8,500,000"}
+            ];
+            
+            listings.forEach((item, index) => {
+                document.write(`
+                    <div class="border p-4 shadow-lg">
+                        <img src="${item.img}" class="w-full h-80 object-cover mb-4">
+                        <h4 class="text-2xl font-bold mb-2">${item.title}</h4>
+                        <p class="text-gray-600 mb-4">${item.desc}</p>
+                        <div class="flex gap-4 mb-4 text-sm font-bold">
+                            <span><i class="fas fa-bed"></i> Bed: ${item.beds}</span>
+                            <span><i class="fas fa-bath"></i> Bath: ${item.baths}</span>
+                            <span><i class="fas fa-expand"></i> ${item.size}</span>
+                        </div>
+                        <div class="flex gap-2 mb-4">
+                            <a href="tel:0983796622" class="flex-1 bg-black text-white text-center py-2">Call</a>
+                            <a href="https://wa.me/251983796622" class="flex-1 bg-green-600 text-white text-center py-2">WA</a>
+                            <a href="https://t.me/yosephab" class="flex-1 bg-blue-600 text-white text-center py-2">TG</a>
+                        </div>
+                        <input type="checkbox" id="toggle-${index}" class="hidden detail-toggle-chk">
+                        <label for="toggle-${index}" class="lbl-toggle-details">View Details</label>
+                        <div class="expandable-details-content border-t mt-2">
+                            <img src="${item.plan}" class="w-full my-4">
+                            <p class="font-bold">Price: ${item.price} ETB</p>
+                            <p>Down Payment (20%): ${Math.round(item.price.replace(/,/g, '') * 0.2).toLocaleString()} ETB</p>
+                            <ul class="text-sm mt-2">
+                                <li><i class="fas fa-check"></i> High-Speed Wi-Fi</li>
+                                <li><i class="fas fa-check"></i> 24/7 Elevator</li>
+                                <li><i class="fas fa-check"></i> Standby Generator</li>
+                            </ul>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+    </section>
+</main>
 
 <section id="gallery" class="p-10 md:p-20 bg-gray-50">
-    <h2 class="text-6xl font-bold mb-16 text-center gold-text">Gallery</h2>
+    <h2 class="text-5xl font-bold text-center mb-10 gold-text">Gallery</h2>
     <div class="grid md:grid-cols-3 gap-8">
         <video src="vid1.mp4" controls class="w-full shadow-lg"></video>
         <video src="vid2.mp4" controls class="w-full shadow-lg"></video>
@@ -118,12 +90,21 @@
     </div>
 </section>
 
-<footer class="bg-[#0a1420] text-gray-300 p-16 text-center text-sm">
-    <div class="mb-4 space-y-2">
-        <h4 class="text-white font-bold text-lg mb-4">Get In Touch</h4>
-        <p>yosephab09@gmail.com</p>
-        <p>0983796622</p>
+<footer class="bg-[#0a1420] text-gray-300 p-10">
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div>
+            <h4 class="text-white font-bold mb-4">Quick Links</h4>
+            <a href="#listings" class="block mb-2">Listings</a>
+            <a href="#about" class="block mb-2">About</a>
+            <a href="#contact" class="block">Contact</a>
+        </div>
+        <div>
+            <h4 class="text-white font-bold mb-4">Get in Touch</h4>
+            <p>yosephab09@gmail.com</p>
+            <p>0983796622</p>
+        </div>
     </div>
 </footer>
+
 </body>
 </html>
