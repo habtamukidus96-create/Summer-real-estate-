@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        h1, h2 { font-family: 'Playfair Display', serif; }
         .gold-text { color: #b8860b; }
         .bg-gold { background-color: #b8860b; }
     </style>
@@ -17,22 +16,22 @@
 
 <nav class="fixed top-0 w-full bg-white z-[100] p-6 flex justify-between items-center border-b border-gray-100 shadow-sm">
     <div class="flex items-center gap-6">
-        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-3xl">☰</button>
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-3xl font-bold">☰</button>
         <div class="text-2xl font-bold tracking-widest gold-text">SUMMER HOMES</div>
     </div>
-    <div class="hidden md:flex gap-6 text-sm font-bold">
-        <a href="https://www.facebook.com/share/1DRB4nuGMN/">FB</a>
-        <a href="https://vt.tiktok.com/ZSQXwXkve/">TT</a>
-        <a href="https://t.me/yosephab">TG</a>
-        <a href="https://wa.me/251983796622">WA</a>
+    <div class="hidden md:flex gap-6 items-center">
+        <a href="https://www.facebook.com/share/1DRB4nuGMN/"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="FB"></a>
+        <a href="https://vt.tiktok.com/ZSQXwXkve/"><img src="https://cdn-icons-png.flaticon.com/24/3046/3046121.png" alt="TT"></a>
+        <a href="https://t.me/yosephab"><img src="https://cdn-icons-png.flaticon.com/24/2111/2111646.png" alt="TG"></a>
+        <a href="https://wa.me/251983796622"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WA"></a>
     </div>
 </nav>
 
 <div id="mobile-menu" class="hidden fixed top-24 w-full bg-white z-[90] p-8 text-center shadow-xl border-b">
-    <a href="#home" class="block py-6 text-2xl">Home</a>
-    <a href="#about" class="block py-6 text-2xl">About Us</a>
-    <a href="#listings" class="block py-6 text-2xl">Listings</a>
-    <a href="#gallery" class="block py-6 text-2xl">Gallery</a>
+    <a href="#home" class="block py-6 text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+    <a href="#about" class="block py-6 text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Us</a>
+    <a href="#listings" class="block py-6 text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Listings</a>
+    <a href="#gallery" class="block py-6 text-2xl" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Gallery</a>
 </div>
 
 <header id="home" class="h-[70vh] bg-cover bg-center flex items-center justify-center mt-24" style="background-image: url('hero.jpg');">
@@ -46,25 +45,22 @@
 
 <section id="listings" class="p-6 md:p-20 bg-gray-50">
     <h2 class="text-6xl font-bold mb-20 text-center gold-text">Our Listings</h2>
-    <div class="grid gap-12" id="listing-container"></div>
+    <div class="grid md:grid-cols-3 gap-12">
+        <div class="bg-white p-8 shadow-xl border border-gray-100">
+            <img src="apt1.jpg" class="w-full h-96 object-cover mb-8">
+            <h3 class="text-4xl font-bold mb-6">Executive Suite</h3>
+            <div class="text-xl font-bold text-gray-600 mb-8">3 Bed | 2 Bath | 182.64 m²</div>
+            <div class="grid grid-cols-3 gap-4 mb-8">
+                <a href="tel:0983796622" class="bg-black text-white py-4 text-center font-bold">CALL</a>
+                <a href="https://wa.me/251983796622" class="bg-green-100 py-4 text-center font-bold">WA</a>
+                <a href="https://t.me/yosephab" class="bg-blue-100 py-4 text-center font-bold">TG</a>
+            </div>
+            <button onclick="openModal('aptf1.jpg', 'Executive Suite', '24/7 Elevator, Parking, Standby Generator')" class="w-full border-4 border-black py-6 text-xl font-bold hover:bg-black hover:text-white transition">View Details</button>
+        </div>
+        </div>
 </section>
 
-<section class="p-12 md:p-24 text-center">
-    <h2 class="text-6xl font-bold mb-12 gold-text">Why Choose Us</h2>
-    <div class="max-w-4xl mx-auto space-y-10 text-2xl text-gray-800 mb-20">
-        <p>• Hand-selected properties for architectural integrity.</p>
-        <p>• Personalized, white-glove consulting service.</p>
-        <p>• Deep expertise in the Addis Ababa market.</p>
-    </div>
-    <h2 class="text-5xl font-bold mb-12 gold-text">Down Payment Discounts</h2>
-    <table class="w-full max-w-lg mx-auto text-xl border-collapse border border-gray-200">
-        <tr class="bg-gray-100"><th class="p-4 border">Advance</th><th class="p-4 border">Discount</th></tr>
-        <tr><td class="p-4 border">20%</td><td class="p-4 border">13%</td></tr>
-        <tr><td class="p-4 border">100%</td><td class="p-4 border">25%</td></tr>
-    </table>
-</section>
-
-<section id="gallery" class="p-10 md:p-20 bg-gray-50">
+<section id="gallery" class="p-10 md:p-20 bg-white">
     <h2 class="text-6xl font-bold mb-16 text-center gold-text">Gallery</h2>
     <div class="grid md:grid-cols-3 gap-8">
         <video src="vid1.mp4" controls class="w-full shadow-lg"></video>
@@ -73,48 +69,17 @@
     </div>
 </section>
 
-<footer class="bg-[#0a1420] text-gray-300 p-16 md:p-24 text-lg">
-    <div class="grid md:grid-cols-3 gap-12">
-        <div><h4 class="text-white font-bold mb-6 text-xl">Quick Links</h4><p>Projects</p><p>Listings</p><p>About</p><p>Contact</p></div>
-        <div><h4 class="text-white font-bold mb-6 text-xl">Get in Touch</h4><p>yosephab09@gmail.com</p><p>0983796622</p></div>
-        <div><h4 class="text-white font-bold mb-6 text-xl">Follow Us</h4><div class="flex gap-6"><span>FB</span> <span>TT</span> <span>TG</span> <span>WA</span></div></div>
-    </div>
-</footer>
-
 <div id="modal" class="hidden fixed inset-0 bg-black/95 z-[200] flex items-center justify-center p-6" onclick="this.classList.add('hidden')">
-    <div class="bg-white p-8 max-w-3xl w-full" onclick="event.stopPropagation()">
-        <img id="modalImg" class="w-full mb-6">
-        <div id="modalContent" class="text-xl"></div>
+    <div class="bg-white p-10 max-w-4xl w-full" onclick="event.stopPropagation()">
+        <img id="modalImg" class="w-full mb-8">
+        <div id="modalContent" class="text-2xl"></div>
     </div>
 </div>
 
 <script>
-    const apts = [
-        {name: "Executive Suite", b: 3, ba: 2, s: "182.64 m²", img: "apt1.jpg", plan: "aptf1.jpg", am: "24/7 Elevator, Parking, Generator"},
-        {name: "Premium Apt", b: 3, ba: 2, s: "168.91 m²", img: "apt2.jpg", plan: "aptf2.jpg", am: "24/7 Elevator, Parking, Generator"},
-        {name: "Studio Suite", b: 1, ba: 1, s: "81.74 m²", img: "apt3.jpg", plan: "aptf3.jpg", am: "24/7 Elevator, Parking, Generator"},
-        {name: "Modern Flat", b: 2, ba: 2, s: "134.85 m²", img: "apt4.jpg", plan: "aptf4.jpg", am: "24/7 Elevator, Parking, Generator"},
-        {name: "Urban Home", b: 2, ba: 2, s: "111.37 m²", img: "apt5.jpg", plan: "aptf5.jpg", am: "24/7 Elevator, Parking, Generator"}
-    ];
-    const container = document.getElementById('listing-container');
-    apts.forEach(a => {
-        container.innerHTML += `
-            <div class="bg-white p-8 shadow-xl border border-gray-100">
-                <img src="${a.img}" class="w-full h-96 object-cover mb-8">
-                <h3 class="text-4xl font-bold mb-6">${a.name}</h3>
-                <div class="flex gap-8 mb-8 text-xl font-bold text-gray-600"><span>Bed: ${a.b]}</span> | <span>Bath: ${a.ba}</span> | <span>${a.s}</span></div>
-                <div class="grid grid-cols-3 gap-4 mb-8">
-                    <a href="tel:0983796622" class="bg-black text-white py-4 text-center font-bold">CALL</a>
-                    <a href="https://wa.me/251983796622" class="bg-green-100 py-4 text-center font-bold">WA</a>
-                    <a href="https://t.me/yosephab" class="bg-blue-100 py-4 text-center font-bold">TG</a>
-                </div>
-                <button onclick="openModal('${a.plan}', '${a.name}', '${a.am}')" class="w-full border-4 border-black py-6 text-xl font-bold hover:bg-black hover:text-white transition">View Details</button>
-            </div>
-        `;
-    });
     function openModal(img, title, am) {
         document.getElementById('modalImg').src = img;
-        document.getElementById('modalContent').innerHTML = `<h3 class="text-3xl font-bold mb-4">${title}</h3><p>Amenities: ${am}</p>`;
+        document.getElementById('modalContent').innerHTML = `<h3 class="text-4xl font-bold mb-4">${title}</h3><p>Amenities: ${am}</p>`;
         document.getElementById('modal').classList.remove('hidden');
     }
 </script>
