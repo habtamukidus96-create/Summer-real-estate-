@@ -5,107 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUMMER HOMES | Luxury Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2 { font-family: 'Playfair Display', serif; }
         .gold-text { color: #b8860b; }
         .bg-gold { background-color: #b8860b; }
-        .border-gold { border-color: #b8860b; }
-        .modal { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.95); z-index: 100; align-items: center; justify-content: center; }
-        .modal.active { display: flex; }
+        .text-size-lg { font-size: 1.1rem; }
     </style>
 </head>
-<body class="text-[#1a1a1a]">
+<body class="bg-white text-gray-900 font-sans">
 
 <!-- Navigation -->
-<nav class="flex justify-between p-6 items-center border-b border-gray-100 sticky top-0 bg-white z-50">
-    <div class="text-2xl font-bold gold-text">SUMMER HOMES</div>
-    <div class="md:hidden cursor-pointer" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">☰</div>
-    <div class="hidden md:flex gap-8 uppercase text-xs font-semibold tracking-[0.2em]">
-        <a href="#home" class="hover:text-gold-text">Home</a>
-        <a href="#listings" class="hover:text-gold-text">Listings</a>
-        <a href="#about" class="hover:text-gold-text">About</a>
-        <a href="#contact" class="hover:text-gold-text">Contact</a>
+<nav class="flex justify-between items-center p-6 border-b border-gray-100 sticky top-0 bg-white z-50">
+    <div class="text-2xl font-bold tracking-widest gold-text">SUMMER HOMES</div>
+    <div class="cursor-pointer" onclick="document.getElementById('nav-menu').classList.toggle('hidden')">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
     </div>
 </nav>
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-6 text-center z-40">
-    <a href="#home" class="block py-4 uppercase text-xs tracking-widest">Home</a>
-    <a href="#listings" class="block py-4 uppercase text-xs tracking-widest">Listings</a>
-    <a href="#about" class="block py-4 uppercase text-xs tracking-widest">About</a>
+<div id="nav-menu" class="hidden absolute w-full bg-white p-6 text-center border-b shadow-lg z-40">
+    <a href="#about" class="block py-4">About</a>
+    <a href="#listings" class="block py-4">Listings</a>
+    <a href="#gallery" class="block py-4">Gallery</a>
 </div>
 
 <!-- Hero -->
-<header id="home" class="h-[70vh] flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('hero.jpg');">
-    <h1 class="text-5xl md:text-7xl text-white font-bold">WHERE LUXURY MEETS HOME</h1>
+<header id="home" class="h-[70vh] bg-cover bg-center flex items-center justify-center" style="background-image: url('hero.jpg');">
+    <h1 class="text-5xl font-bold text-white tracking-wider">WHERE LUXURY MEETS HOME</h1>
 </header>
 
+<!-- About -->
+<section id="about" class="p-10 md:p-20 text-center">
+    <h2 class="text-4xl font-bold mb-8 gold-text">About Us</h2>
+    <p class="text-size-lg leading-relaxed max-w-3xl mx-auto">Summer Homes curates lifestyles, bridging the gap between world-class architectural standards and the unique pulse of Addis Ababa. We provide a seamless, white-glove acquisition experience.</p>
+</section>
+
 <!-- Listings -->
-<section id="listings" class="p-6 md:p-20 bg-gray-50">
-    <h2 class="text-4xl text-center mb-16 uppercase gold-text">Our Listings</h2>
+<section id="listings" class="p-10 md:p-20 bg-gray-50">
+    <h2 class="text-4xl font-bold mb-16 text-center gold-text">Our Listings</h2>
     <div class="grid md:grid-cols-3 gap-10">
-        <!-- Example Property Card (Repeat for all 5) -->
-        <div class="bg-white border border-gray-100 p-4 hover:shadow-xl transition">
-            <img src="apt1.jpg" class="w-full h-64 object-cover mb-6">
-            <h3 class="text-xl font-bold mb-2">Executive Suite</h3>
-            <p class="text-sm text-gray-500 mb-6">World-class architectural mastery.</p>
-            <div class="flex gap-4 mb-6 text-xs text-gray-400"><span>3 Bed</span> | <span>2 Bath</span> | <span>182.64 m²</span></div>
+        <!-- Card Pattern (Repeat 5 times with distinct data) -->
+        <div class="bg-white p-6 shadow-md border border-gray-100">
+            <img src="apt1.jpg" class="w-full h-72 object-cover mb-6">
+            <h3 class="text-2xl font-bold mb-4">Luxury 3 Bed Executive Suite</h3>
+            <p class="mb-6 text-size-lg text-gray-600">Expansive premium layout showcasing high-end engineering solutions.</p>
+            <div class="flex gap-4 mb-6 text-gold font-bold"><span>Bed: 3</span> | <span>Bath: 2</span> | <span>182.64 m²</span></div>
             <div class="grid grid-cols-3 gap-2 mb-6">
-                <a href="tel:0983796622" class="border border-gray-200 py-2 text-center text-[10px] hover:bg-gold hover:text-white transition">CALL</a>
-                <a href="https://wa.me/251983796622" class="border border-gray-200 py-2 text-center text-[10px] hover:bg-gold hover:text-white transition">WA</a>
-                <a href="https://t.me/yosephab" class="border border-gray-200 py-2 text-center text-[10px] hover:bg-gold hover:text-white transition">TG</a>
+                <a href="tel:0983796622" class="bg-black text-white py-3 text-center text-sm font-bold">CALL</a>
+                <a href="https://wa.me/251983796622" class="bg-green-100 py-3 text-center text-sm font-bold border border-green-200">WA</a>
+                <a href="https://t.me/yosephab" class="bg-blue-100 py-3 text-center text-sm font-bold border border-blue-200">TG</a>
             </div>
-            <button onclick="openModal('aptf1.jpg')" class="w-full bg-black text-white py-4 uppercase text-xs tracking-widest hover:bg-gold transition">View Details</button>
+            <button onclick="openModal('aptf1.jpg')" class="w-full border-2 border-black py-4 text-sm font-bold hover:bg-black hover:text-white transition">View Details</button>
         </div>
     </div>
 </section>
 
-<!-- About & Why -->
-<section id="about" class="p-6 md:p-20">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl mb-8">About Summer Homes</h2>
-        <p class="mb-16 leading-relaxed text-gray-600">We don't just facilitate transactions; we curate lifestyles. Based in Addis Ababa, we bridge the gap between world-class architectural standards and the unique pulse of our city.</p>
-        
-        <h2 class="text-4xl mb-8 gold-text">Why Choose Us</h2>
-        <div class="grid md:grid-cols-2 gap-8 text-left mb-16">
-            <div class="p-6 border-l-2 border-gold">
-                <h4 class="font-bold mb-2">Curated Excellence</h4>
-                <p class="text-sm text-gray-600">Each property is hand-selected for its integrity and value.</p>
-            </div>
-            <div class="p-6 border-l-2 border-gold">
-                <h4 class="font-bold mb-2">Seamless Acquisition</h4>
-                <p class="text-sm text-gray-600">White-glove service from consultation to final handover.</p>
-            </div>
-        </div>
-
-        <h3 class="text-2xl mb-8">Down Payment Discounts</h3>
-        <table class="w-full max-w-sm mx-auto text-sm">
-            <tr class="border-b border-gray-200"><th class="py-2 text-left">Advance</th><th class="py-2 text-right">Discount</th></tr>
-            <tr class="border-b border-gray-100"><td class="py-2">20%</td><td class="py-2 text-right">13%</td></tr>
-            <tr class="border-b border-gray-100"><td class="py-2">100%</td><td class="py-2 text-right">25%</td></tr>
-        </table>
+<!-- Why Choose Us -->
+<section class="p-10 md:p-20 text-center">
+    <h2 class="text-4xl font-bold mb-10 gold-text">Why Choose Us</h2>
+    <div class="max-w-2xl mx-auto space-y-6 text-size-lg">
+        <p>✓ Hand-selected properties for architectural integrity.</p>
+        <p>✓ Personalized, white-glove consulting service.</p>
+        <p>✓ Deep expertise in the Addis Ababa market.</p>
     </div>
 </section>
 
-<!-- Footer -->
-<footer id="contact" class="p-10 border-t border-gray-100 text-center">
-    <div class="text-lg font-bold mb-4">SUMMER HOMES</div>
-    <p class="text-sm text-gray-500">yosephab09@gmail.com | 0983796622</p>
+<!-- Gallery -->
+<section id="gallery" class="p-10 md:p-20 bg-gray-50">
+    <h2 class="text-4xl font-bold mb-10 gold-text">Gallery</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+        <video src="vid1.mp4" controls class="w-full shadow-lg"></video>
+        <video src="vid2.mp4" controls class="w-full shadow-lg"></video>
+        <video src="vid3.mp4" controls class="w-full shadow-lg"></video>
+    </div>
+</section>
+
+<!-- Footer (Matches Screenshot_20260704-233248-1.jpg) -->
+<footer class="bg-[#0a1420] text-gray-300 p-10 md:p-20">
+    <div class="grid md:grid-cols-3 gap-10">
+        <div>
+            <h4 class="text-white font-bold mb-4">Quick Links</h4>
+            <div class="space-y-2">
+                <p>Projects</p><p>Typologies</p><p>About</p><p>Contact</p>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-white font-bold mb-4">Get in Touch</h4>
+            <p>info@summerrealestateet.com</p>
+            <p>+251 974 747 450</p>
+            <p>Kazadis Building, Kazanchis, Addis Ababa</p>
+        </div>
+        <div>
+            <h4 class="text-white font-bold mb-4">Follow Us</h4>
+            <div class="flex gap-4"><span>IG</span> <span>LI</span></div>
+        </div>
+    </div>
+    <p class="mt-10 border-t border-gray-700 pt-6 text-sm">© 2026 Summer Real Estate. All rights reserved.</p>
 </footer>
 
 <!-- Modal -->
-<div id="modal" class="modal" onclick="this.classList.remove('active')">
-    <img id="modalImg" src="" class="max-w-[90%] max-h-[80vh] border-4 border-white shadow-2xl">
+<div id="modal" class="hidden fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4" onclick="this.classList.add('hidden')">
+    <img id="modalImg" class="max-w-full max-h-[80vh] border-4 border-white shadow-2xl">
 </div>
 
 <script>
     function openModal(img) {
         document.getElementById('modalImg').src = img;
-        document.getElementById('modal').classList.add('active');
+        document.getElementById('modal').classList.remove('hidden');
     }
 </script>
-
 </body>
 </html>
