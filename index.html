@@ -3,100 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summer Real Estate | Luxury Properties</title>
+    <title>SUMMER HOMES | Luxury Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #050505; color: #e5e7eb; font-family: 'Inter', sans-serif; }
-        .text-gold { color: #c5a059; }
-        .bg-gold { background-color: #c5a059; }
-        .border-gold { border-color: #c5a059; }
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .gold-text { color: #b8860b; }
+        .bg-gold { background-color: #b8860b; }
+        .border-gold { border-color: #b8860b; }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.95); z-index: 100; align-items: center; justify-content: center; }
         .modal.active { display: flex; }
     </style>
 </head>
-<body>
+<body class="text-[#1a1a1a]">
 
 <!-- Navigation -->
-<nav class="flex justify-between p-6 items-center border-b border-gray-800 sticky top-0 bg-black/90 backdrop-blur z-50">
-    <div class="text-2xl font-bold tracking-[0.2em] text-gold">SUMMER</div>
-    <div class="md:hidden cursor-pointer text-gold" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">☰</div>
-    <div class="hidden md:flex gap-8 uppercase text-xs tracking-widest font-semibold">
-        <a href="#home" class="hover:text-gold transition">Home</a>
-        <a href="#properties" class="hover:text-gold transition">Properties</a>
-        <a href="#gallery" class="hover:text-gold transition">Gallery</a>
-        <a href="#about" class="hover:text-gold transition">About</a>
-        <a href="#contact" class="hover:text-gold transition">Contact</a>
+<nav class="flex justify-between p-6 items-center border-b border-gray-100 sticky top-0 bg-white z-50">
+    <div class="text-2xl font-bold gold-text">SUMMER HOMES</div>
+    <div class="md:hidden cursor-pointer" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">☰</div>
+    <div class="hidden md:flex gap-8 uppercase text-xs font-semibold tracking-[0.2em]">
+        <a href="#home" class="hover:text-gold-text">Home</a>
+        <a href="#listings" class="hover:text-gold-text">Listings</a>
+        <a href="#about" class="hover:text-gold-text">About</a>
+        <a href="#contact" class="hover:text-gold-text">Contact</a>
     </div>
 </nav>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden md:hidden bg-black p-6 text-center z-40 border-b border-gold">
-    <a href="#home" class="block py-4">Home</a>
-    <a href="#properties" class="block py-4">Properties</a>
-    <a href="#gallery" class="block py-4">Gallery</a>
+<div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 p-6 text-center z-40">
+    <a href="#home" class="block py-4 uppercase text-xs tracking-widest">Home</a>
+    <a href="#listings" class="block py-4 uppercase text-xs tracking-widest">Listings</a>
+    <a href="#about" class="block py-4 uppercase text-xs tracking-widest">About</a>
 </div>
 
-<!-- Hero Section -->
-<header id="home" class="h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('hero.jpg');">
-    <div class="bg-black/50 p-10 border border-gold/30">
-        <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight">WHERE LUXURY MEETS HOME</h1>
-    </div>
+<!-- Hero -->
+<header id="home" class="h-[70vh] flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('hero.jpg');">
+    <h1 class="text-5xl md:text-7xl text-white font-bold">WHERE LUXURY MEETS HOME</h1>
 </header>
 
-<!-- Properties Grid -->
-<section id="properties" class="p-6 md:p-20">
-    <h2 class="text-4xl font-bold mb-12 border-l-4 border-gold pl-6">Elite Properties</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-        <!-- Property Card Pattern -->
-        <div class="bg-[#0a0a0a] border border-gray-800 p-6 group hover:border-gold transition-all">
-            <img src="apt1.jpg" class="w-full h-64 object-cover mb-4">
-            <h3 class="text-xl font-bold mb-2">Luxury Executive Suite</h3>
-            <p class="text-gray-400 text-sm mb-4">Expansive premium layout showcasing high-end architectural engineering.</p>
-            <div class="flex gap-4 text-xs text-gold mb-6"><span>3 Bed</span> | <span>2 Bath</span> | <span>182.64 m²</span></div>
-            <div class="grid grid-cols-3 gap-2 mb-4">
-                <a href="tel:0983796622" class="border border-gray-700 py-2 text-center text-[10px] hover:bg-gold hover:text-black">CALL</a>
-                <a href="https://wa.me/251983796622" class="border border-gray-700 py-2 text-center text-[10px] hover:bg-gold hover:text-black">WHATSAPP</a>
-                <a href="https://t.me/yosephab" class="border border-gray-700 py-2 text-center text-[10px] hover:bg-gold hover:text-black">TELEGRAM</a>
+<!-- Listings -->
+<section id="listings" class="p-6 md:p-20 bg-gray-50">
+    <h2 class="text-4xl text-center mb-16 uppercase gold-text">Our Listings</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+        <!-- Example Property Card (Repeat for all 5) -->
+        <div class="bg-white border border-gray-100 p-4 hover:shadow-xl transition">
+            <img src="apt1.jpg" class="w-full h-64 object-cover mb-6">
+            <h3 class="text-xl font-bold mb-2">Executive Suite</h3>
+            <p class="text-sm text-gray-500 mb-6">World-class architectural mastery.</p>
+            <div class="flex gap-4 mb-6 text-xs text-gray-400"><span>3 Bed</span> | <span>2 Bath</span> | <span>182.64 m²</span></div>
+            <div class="grid grid-cols-3 gap-2 mb-6">
+                <a href="tel:0983796622" class="border border-gray-200 py-2 text-center text-[10px] hover:bg-gold hover:text-white transition">CALL</a>
+                <a href="https://wa.me/251983796622" class="border border-gray-200 py-2 text-center text-[10px] hover:bg-gold hover:text-white transition">WA</a>
+                <a href="https://t.me/yosephab" class="border border-gray-200 py-2 text-center text-[10px] hover:bg-gold hover:text-white transition">TG</a>
             </div>
-            <button onclick="openModal('aptf1.jpg')" class="w-full bg-gold text-black font-bold py-3 text-sm tracking-widest">VIEW DETAILS</button>
+            <button onclick="openModal('aptf1.jpg')" class="w-full bg-black text-white py-4 uppercase text-xs tracking-widest hover:bg-gold transition">View Details</button>
         </div>
     </div>
 </section>
 
-<!-- Down Payment Table -->
-<section class="p-6 md:p-20 bg-[#0a0a0a]">
-    <h2 class="text-3xl font-bold mb-10 text-center text-gold">Down Payment Discounts</h2>
-    <div class="max-w-md mx-auto border border-gold/50">
-        <table class="w-full text-center">
-            <tr class="bg-gold text-black uppercase text-xs font-bold"><td class="p-4">Advance</td><td class="p-4">Discount</td></tr>
-            <tr class="border-b border-gray-800"><td>20%</td><td>13%</td></tr>
-            <tr class="border-b border-gray-800"><td>50%</td><td>19%</td></tr>
-            <tr class="border-b border-gray-800"><td>100%</td><td>25%</td></tr>
+<!-- About & Why -->
+<section id="about" class="p-6 md:p-20">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl mb-8">About Summer Homes</h2>
+        <p class="mb-16 leading-relaxed text-gray-600">We don't just facilitate transactions; we curate lifestyles. Based in Addis Ababa, we bridge the gap between world-class architectural standards and the unique pulse of our city.</p>
+        
+        <h2 class="text-4xl mb-8 gold-text">Why Choose Us</h2>
+        <div class="grid md:grid-cols-2 gap-8 text-left mb-16">
+            <div class="p-6 border-l-2 border-gold">
+                <h4 class="font-bold mb-2">Curated Excellence</h4>
+                <p class="text-sm text-gray-600">Each property is hand-selected for its integrity and value.</p>
+            </div>
+            <div class="p-6 border-l-2 border-gold">
+                <h4 class="font-bold mb-2">Seamless Acquisition</h4>
+                <p class="text-sm text-gray-600">White-glove service from consultation to final handover.</p>
+            </div>
+        </div>
+
+        <h3 class="text-2xl mb-8">Down Payment Discounts</h3>
+        <table class="w-full max-w-sm mx-auto text-sm">
+            <tr class="border-b border-gray-200"><th class="py-2 text-left">Advance</th><th class="py-2 text-right">Discount</th></tr>
+            <tr class="border-b border-gray-100"><td class="py-2">20%</td><td class="py-2 text-right">13%</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2">100%</td><td class="py-2 text-right">25%</td></tr>
         </table>
     </div>
 </section>
 
-<!-- Gallery -->
-<section id="gallery" class="p-6 md:p-20">
-    <h2 class="text-3xl font-bold mb-10">Gallery</h2>
-    <div class="grid md:grid-cols-3 gap-4">
-        <video src="vid1.mp4" class="w-full h-auto" controls></video>
-        <video src="vid2.mp4" class="w-full h-auto" controls></video>
-        <video src="vid3.mp4" class="w-full h-auto" controls></video>
-    </div>
-</section>
+<!-- Footer -->
+<footer id="contact" class="p-10 border-t border-gray-100 text-center">
+    <div class="text-lg font-bold mb-4">SUMMER HOMES</div>
+    <p class="text-sm text-gray-500">yosephab09@gmail.com | 0983796622</p>
+</footer>
 
 <!-- Modal -->
-<div id="propertyModal" class="modal" onclick="this.classList.remove('active')">
-    <div class="w-[90%] max-w-lg bg-black border border-gold p-2" onclick="event.stopPropagation()">
-        <img id="modalImg" src="" class="w-full">
-    </div>
+<div id="modal" class="modal" onclick="this.classList.remove('active')">
+    <img id="modalImg" src="" class="max-w-[90%] max-h-[80vh] border-4 border-white shadow-2xl">
 </div>
 
 <script>
     function openModal(img) {
         document.getElementById('modalImg').src = img;
-        document.getElementById('propertyModal').classList.add('active');
+        document.getElementById('modal').classList.add('active');
     }
 </script>
 
