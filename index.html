@@ -9,7 +9,7 @@
     <style>
         .gold-text { color: #b8860b; }
         .bg-gold { background-color: #b8860b; }
-        /* Toggle Logic Fix */
+        /* Toggle Logic: Ensures only the clicked section opens */
         .toggle-btn { display: none; }
         .details-box { display: none; padding: 1.5rem; background: #f9fafb; border-top: 2px solid #b8860b; }
         .toggle-btn:checked + .details-box { display: block; }
@@ -43,35 +43,100 @@
     <h2 class="text-5xl font-bold mb-16 text-center">OUR LISTINGS.</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         
-        <!-- Template Function -->
-        <script>
-            function renderListing(id, title, img, beds, baths, size) {
-                document.write(`
-                    <div class="border p-6 shadow-xl flex flex-col">
-                        <img src="${img}" class="w-full h-[350px] object-cover mb-6">
-                        <h4 class="text-3xl font-bold mb-4">${title}</h4>
-                        <div class="flex gap-6 mb-6 text-xl text-gray-600">
-                            <span><i class="fas fa-bed text-gold"></i> ${beds}</span>
-                            <span><i class="fas fa-bath text-gold"></i> ${baths}</span>
-                            <span><i class="fas fa-expand text-gold"></i> ${size}</span>
-                        </div>
-                        <div class="flex justify-between gap-2 mb-6">
-                            <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
-                            <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://t.me/yosephab" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
-                        </div>
-                        <input type="checkbox" id="check${id}" class="toggle-btn">
-                        <label for="check${id}" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
-                        <div class="details-box"><img src="aptf${id}.jpg" class="w-full"></div>
-                    </div>
-                `);
-            }
-            renderListing(1, "Executive Suite", "apt1.jpg", "3 Bed", "2 Bath", "182 m²");
-            renderListing(2, "Premium Apt", "apt2.jpg", "3 Bed", "2 Bath", "168 m²");
-            renderListing(3, "Studio Suite", "apt3.jpg", "1 Bed", "1 Bath", "81 m²");
-            renderListing(4, "Modern Flat", "apt4.jpg", "2 Bed", "2 Bath", "134 m²");
-            renderListing(5, "Urban Home", "apt5.jpg", "2 Bed", "2 Bath", "111 m²");
-        </script>
+        <!-- Listing 1 -->
+        <div class="border p-6 shadow-xl flex flex-col">
+            <img src="apt1.jpg" class="w-full h-[350px] object-cover mb-6">
+            <h4 class="text-3xl font-bold mb-4">Executive Suite</h4>
+            <div class="flex gap-6 mb-6 text-xl text-gray-600">
+                <span><i class="fas fa-bed text-gold"></i> 3 Bed</span>
+                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
+                <span><i class="fas fa-expand text-gold"></i> 182 m²</span>
+            </div>
+            <div class="flex justify-between gap-2 mb-6">
+                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/yosephab" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <input type="checkbox" id="check1" class="toggle-btn">
+            <label for="check1" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
+            <div class="details-box"><img src="aptf1.jpg" class="w-full"></div>
+        </div>
+
+        <!-- Listing 2 -->
+        <div class="border p-6 shadow-xl flex flex-col">
+            <img src="apt2.jpg" class="w-full h-[350px] object-cover mb-6">
+            <h4 class="text-3xl font-bold mb-4">Premium Apt</h4>
+            <div class="flex gap-6 mb-6 text-xl text-gray-600">
+                <span><i class="fas fa-bed text-gold"></i> 3 Bed</span>
+                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
+                <span><i class="fas fa-expand text-gold"></i> 168 m²</span>
+            </div>
+            <div class="flex justify-between gap-2 mb-6">
+                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/yosephab" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <input type="checkbox" id="check2" class="toggle-btn">
+            <label for="check2" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
+            <div class="details-box"><img src="aptf2.jpg" class="w-full"></div>
+        </div>
+
+        <!-- Listing 3 -->
+        <div class="border p-6 shadow-xl flex flex-col">
+            <img src="apt3.jpg" class="w-full h-[350px] object-cover mb-6">
+            <h4 class="text-3xl font-bold mb-4">Studio Suite</h4>
+            <div class="flex gap-6 mb-6 text-xl text-gray-600">
+                <span><i class="fas fa-bed text-gold"></i> 1 Bed</span>
+                <span><i class="fas fa-bath text-gold"></i> 1 Bath</span>
+                <span><i class="fas fa-expand text-gold"></i> 81 m²</span>
+            </div>
+            <div class="flex justify-between gap-2 mb-6">
+                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/yosephab" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <input type="checkbox" id="check3" class="toggle-btn">
+            <label for="check3" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
+            <div class="details-box"><img src="aptf3.jpg" class="w-full"></div>
+        </div>
+
+        <!-- Listing 4 -->
+        <div class="border p-6 shadow-xl flex flex-col">
+            <img src="apt4.jpg" class="w-full h-[350px] object-cover mb-6">
+            <h4 class="text-3xl font-bold mb-4">Modern Flat</h4>
+            <div class="flex gap-6 mb-6 text-xl text-gray-600">
+                <span><i class="fas fa-bed text-gold"></i> 2 Bed</span>
+                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
+                <span><i class="fas fa-expand text-gold"></i> 134 m²</span>
+            </div>
+            <div class="flex justify-between gap-2 mb-6">
+                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/yosephab" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <input type="checkbox" id="check4" class="toggle-btn">
+            <label for="check4" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
+            <div class="details-box"><img src="aptf4.jpg" class="w-full"></div>
+        </div>
+
+        <!-- Listing 5 -->
+        <div class="border p-6 shadow-xl flex flex-col">
+            <img src="apt5.jpg" class="w-full h-[350px] object-cover mb-6">
+            <h4 class="text-3xl font-bold mb-4">Urban Home</h4>
+            <div class="flex gap-6 mb-6 text-xl text-gray-600">
+                <span><i class="fas fa-bed text-gold"></i> 2 Bed</span>
+                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
+                <span><i class="fas fa-expand text-gold"></i> 111 m²</span>
+            </div>
+            <div class="flex justify-between gap-2 mb-6">
+                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://t.me/yosephab" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <input type="checkbox" id="check5" class="toggle-btn">
+            <label for="check5" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
+            <div class="details-box"><img src="aptf5.jpg" class="w-full"></div>
+        </div>
         
     </div>
 </section>
@@ -91,7 +156,7 @@
 
 <!-- Footer -->
 <footer id="contact" class="bg-black text-white p-16 text-center">
-    <div class="flex justify-center gap-8 text-4xl mb-10"><a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a><a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok"></i></a><a href="https://t.me/yosephab"><i class="fab fa-telegram"></i></a><a href="https://wa.me/251983796622"><i class="fab fa-whatsapp"></i></a></div>
+    <div class="flex justify-center gap-8 text-4xl mb-10"><a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a><a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok"></i></a><a href="https://t.me/yosephab"><i class="fab fa-telegram"></i></a><a href="https://wa.me/251922785816"><i class="fab fa-whatsapp"></i></a></div>
     <p>© 2026 Summer Homes Addis Ababa</p>
 </footer>
 
