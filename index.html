@@ -9,14 +9,13 @@
     <style>
         .gold-text { color: #b8860b; }
         .bg-gold { background-color: #b8860b; }
-        .expandable-details-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; background: #f9fafb; }
-        .detail-toggle-chk:checked + .expandable-details-content { max-height: 1000px; padding: 1.5rem; border-top: 2px solid #b8860b; }
-        .lbl-toggle-details { cursor: pointer; display: block; text-align: center; padding: 1rem; background: #000; color: #fff; font-weight: bold; margin-top: 1rem; transition: 0.3s; }
-        .lbl-toggle-details:hover { background: #b8860b; }
+        .details-box { display: none; padding: 1.5rem; background: #f9fafb; border-top: 2px solid #b8860b; }
+        .toggle-btn:checked + .details-box { display: block; }
     </style>
 </head>
 <body class="font-sans text-gray-900 bg-white">
 
+<!-- Header -->
 <nav class="absolute top-0 w-full z-50 p-6 flex justify-between items-center text-white">
     <span class="text-2xl font-bold tracking-widest">SUMMER HOMES</span>
     <button onclick="document.getElementById('mobile-menu').classList.remove('hidden')" class="text-4xl focus:outline-none">☰</button>
@@ -26,56 +25,68 @@
     <a href="#home">Home</a><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a>
 </div>
 
+<!-- Hero -->
 <header id="home" class="h-screen flex flex-col items-center justify-center text-white text-center p-10 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');">
     <h1 class="text-6xl md:text-8xl font-bold mb-6">OWN THE SKYLINE.</h1>
 </header>
 
+<!-- About -->
 <section id="about" class="py-24 px-10 text-center border-b-8 border-gold">
     <h2 class="text-5xl font-bold mb-8">CRAFTED FOR AMBITION.</h2>
-    <p class="text-2xl max-w-4xl mx-auto text-gray-700 leading-relaxed">
-        Summer Homes redefines luxury in Addis Ababa. We curate elite residential spaces that blend architectural dominance with modern comfort, ensuring your investment stands as a testament to your success.
-    </p>
+    <p class="text-2xl max-w-4xl mx-auto text-gray-700 leading-relaxed">Summer Homes redefines luxury in Addis Ababa. We curate elite residential spaces that blend architectural dominance with modern comfort, ensuring your investment stands as a testament to your success.</p>
 </section>
 
+<!-- Listings (Fixed 5 Items & Working Details) -->
 <section id="listings" class="py-24 px-10 bg-white">
     <h2 class="text-5xl font-bold mb-16 text-center">OUR LISTINGS.</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        <div class="border p-6 shadow-xl flex flex-col">
-            <img src="apt1.jpg" class="w-full h-[350px] object-cover mb-6">
-            <h4 class="text-3xl font-bold mb-4">Executive Suite</h4>
-            <div class="flex gap-6 mb-6 text-xl text-gray-600">
-                <span><i class="fas fa-bed text-gold"></i> 3 Bed</span>
-                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
-                <span><i class="fas fa-expand text-gold"></i> 182 m²</span>
-            </div>
-            <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white transition"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://t.me/yosephab" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white transition"><i class="fab fa-telegram-plane"></i></a>
-            </div>
-            <input type="checkbox" id="t1" class="hidden detail-toggle-chk">
-            <label for="t1" class="lbl-toggle-details">View Details</label>
-            <div class="expandable-details-content"><img src="aptf1.jpg" class="w-full"></div>
-        </div>
-        </div>
-</section>
-
-<section id="why-choose-us" class="py-24 px-10 bg-black text-white text-center">
-    <h2 class="text-5xl font-bold mb-20">BUILT FOR POWER LIVING.</h2>
-    <div class="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto text-left">
-        <div class="p-8 border-t-2 border-gold"><h4 class="text-2xl font-bold gold-text mb-4">Prime Locations</h4><p>We secure properties in the most prestigious neighborhoods for long-term value.</p></div>
-        <div class="p-8 border-t-2 border-gold"><h4 class="text-2xl font-bold gold-text mb-4">Modern Architecture</h4><p>Bold, contemporary designs that serve as a testament to your success.</p></div>
-        <div class="p-8 border-t-2 border-gold"><h4 class="text-2xl font-bold gold-text mb-4">Private Experience</h4><p>Exclusive, white-glove consultation tailored to your specific goals.</p></div>
+        <!-- Reusable Listing Component -->
+        <script>
+            function createListing(id, title, img, beds, baths, size) {
+                document.write(`
+                    <div class="border p-6 shadow-xl flex flex-col">
+                        <img src="${img}" class="w-full h-[350px] object-cover mb-6">
+                        <h4 class="text-3xl font-bold mb-4">${title}</h4>
+                        <div class="flex gap-6 mb-6 text-xl text-gray-600">
+                            <span><i class="fas fa-bed text-gold"></i> ${beds}</span>
+                            <span><i class="fas fa-bath text-gold"></i> ${baths}</span>
+                            <span><i class="fas fa-expand text-gold"></i> ${size}</span>
+                        </div>
+                        <div class="flex justify-between gap-2 mb-6">
+                            <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                            <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://t.me/yosephab" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-telegram-plane"></i></a>
+                        </div>
+                        <input type="checkbox" id="check${id}" class="hidden toggle-btn">
+                        <label for="check${id}" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
+                        <div class="details-box"><img src="aptf${id}.jpg" class="w-full"></div>
+                    </div>
+                `);
+            }
+        </script>
+        <script>
+            createListing(1, "Executive Suite", "apt1.jpg", "3 Bed", "2 Bath", "182 m²");
+            createListing(2, "Premium Apt", "apt2.jpg", "3 Bed", "2 Bath", "168 m²");
+            createListing(3, "Studio Suite", "apt3.jpg", "1 Bed", "1 Bath", "81 m²");
+            createListing(4, "Modern Flat", "apt4.jpg", "2 Bed", "2 Bath", "134 m²");
+            createListing(5, "Urban Home", "apt5.jpg", "2 Bed", "2 Bath", "111 m²");
+        </script>
     </div>
 </section>
 
-<section id="gallery" class="py-24 px-10 text-center"><h2 class="text-5xl font-bold mb-12">Gallery</h2><div class="grid md:grid-cols-3 gap-6"><video src="vid1.mp4" controls class="w-full"></video><video src="vid2.mp4" controls class="w-full"></video><video src="vid3.mp4" controls class="w-full"></video></div></section>
-
-<footer id="contact" class="bg-gray-900 text-white p-16 text-center">
-    <div class="grid md:grid-cols-2 gap-12 mb-10 text-xl font-bold">
-        <div class="flex flex-col gap-4"><a href="#home">Home</a><a href="#about">About Us</a><a href="#listings">Listings</a><a href="#contact">Contact</a></div>
-        <div class="text-4xl flex justify-center gap-8"><a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a><a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok"></i></a><a href="https://t.me/yosephab"><i class="fab fa-telegram"></i></a><a href="https://wa.me/251983796622"><i class="fab fa-whatsapp"></i></a></div>
+<!-- Improved Why Choose Us -->
+<section id="why-choose-us" class="py-24 px-10 bg-gray-900 text-white text-center">
+    <h2 class="text-5xl font-bold mb-16">BUILT FOR POWER LIVING.</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white text-gray-900 p-10 rounded shadow-lg"><i class="fas fa-map-marked-alt text-5xl gold-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Prime Locations</h4><p>We secure properties in the most prestigious neighborhoods for long-term value.</p></div>
+        <div class="bg-white text-gray-900 p-10 rounded shadow-lg"><i class="fas fa-drafting-compass text-5xl gold-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Modern Design</h4><p>Bold, contemporary architecture that serves as a testament to your success.</p></div>
+        <div class="bg-white text-gray-900 p-10 rounded shadow-lg"><i class="fas fa-user-tie text-5xl gold-text mb-6"></i><h4 class="text-2xl font-bold mb-4">White-Glove Service</h4><p>Exclusive consultation tailored to your specific real estate and lifestyle goals.</p></div>
     </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact" class="bg-black text-white p-16 text-center">
+    <div class="flex justify-center gap-8 text-4xl mb-10"><a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a><a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok"></i></a><a href="https://t.me/yosephab"><i class="fab fa-telegram"></i></a><a href="https://wa.me/251983796622"><i class="fab fa-whatsapp"></i></a></div>
     <p>© 2026 Summer Homes Addis Ababa</p>
 </footer>
 
