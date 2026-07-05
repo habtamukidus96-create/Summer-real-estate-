@@ -17,76 +17,58 @@
 </head>
 <body class="font-sans text-gray-900 bg-white">
 
-<!-- Header (Blends with Hero) -->
 <nav class="absolute top-0 w-full z-50 p-4 flex justify-between items-center text-white">
     <span class="text-xl font-bold tracking-widest">SUMMER HOMES</span>
     <button onclick="document.getElementById('mobile-menu').classList.remove('hidden')" class="text-3xl focus:outline-none">☰</button>
 </nav>
 
-<!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden fixed inset-0 bg-black/90 z-[60] flex flex-col items-center justify-center text-white text-3xl gap-10" onclick="this.classList.add('hidden')">
-    <a href="#home" class="hover:text-gold">Home</a>
-    <a href="#about" class="hover:text-gold">About Us</a>
-    <a href="#listings" class="hover:text-gold">Our Listings</a>
-    <a href="#contact" class="hover:text-gold">Contact Us</a>
+    <a href="#home">Home</a><a href="#about">About Us</a><a href="#listings">Our Listings</a><a href="#contact">Contact Us</a>
 </div>
 
-<!-- Hero Section -->
 <header id="home" class="h-screen flex flex-col items-center justify-center text-white text-center p-10 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');">
     <h1 class="text-5xl md:text-7xl font-bold mb-6">OWN THE SKYLINE.</h1>
-    <p class="text-xl md:text-2xl mb-10 tracking-wide">Luxury real estate in Addis Ababa.</p>
+    <p class="text-xl md:text-2xl mb-10">Luxury real estate in Addis Ababa.</p>
     <a href="#listings" class="px-8 py-4 bg-gold text-white font-bold hover:bg-black transition-all">Explore Properties</a>
 </header>
 
-<!-- About Us -->
 <section id="about" class="py-24 px-10 bg-gray-50 text-center border-b-4 border-gold">
-    <h2 class="text-4xl md:text-5xl font-bold mb-8">CRAFTED FOR AMBITION.</h2>
-    <div class="max-w-4xl mx-auto"><p class="text-lg md:text-xl text-gray-700 leading-relaxed">At Summer Homes, we believe that real estate in Addis Ababa should embody both architectural dominance and modern comfort.</p></div>
+    <h2 class="text-4xl font-bold mb-8">CRAFTED FOR AMBITION.</h2>
+    <p class="text-lg max-w-4xl mx-auto">At Summer Homes, we believe that real estate in Addis Ababa should embody both architectural dominance and modern comfort.</p>
 </section>
 
-<!-- Listings (Bigger Images & Icons) -->
 <section id="listings" class="py-24 px-10 bg-white">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">OUR LISTINGS.</h2>
+    <h2 class="text-4xl font-bold mb-12">OUR LISTINGS.</h2>
     <div class="grid md:grid-cols-3 gap-12">
-        <!-- Listing Items -->
-        <div class="border p-6 shadow-xl bg-white">
-            <img src="apt1.jpg" class="w-full h-96 object-cover mb-6">
-            <h4 class="text-2xl font-bold mb-2">Executive Suite</h4>
-            <div class="flex gap-4 text-gray-600 mb-6">
-                <span><i class="fas fa-bed text-gold"></i> 3 Bed</span>
-                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
-                <span><i class="fas fa-expand text-gold"></i> 182 m²</span>
-            </div>
-            <input type="checkbox" id="t1" class="hidden detail-toggle-chk"><label for="t1" class="lbl-toggle-details">View Details</label>
-            <div class="expandable-details-content"><img src="aptf1.jpg" class="w-full"></div>
-        </div>
-        <!-- (Repeated for 5 items) -->
+        <div class="border p-6 shadow-xl"><img src="apt1.jpg" class="w-full h-96 object-cover mb-6"><h4 class="text-2xl font-bold mb-2">Executive Suite</h4><div class="flex gap-4 mb-6 text-gray-600"><span><i class="fas fa-bed text-gold"></i> 3 Bed</span><span><i class="fas fa-bath text-gold"></i> 2 Bath</span><span><i class="fas fa-expand text-gold"></i> 182 m²</span></div><input type="checkbox" id="t1" class="hidden detail-toggle-chk"><label for="t1" class="lbl-toggle-details">View Details</label><div class="expandable-details-content"><img src="aptf1.jpg" class="w-full"></div></div>
+        <div class="border p-6 shadow-xl"><img src="apt2.jpg" class="w-full h-96 object-cover mb-6"><h4 class="text-2xl font-bold mb-2">Premium Apt</h4><div class="flex gap-4 mb-6 text-gray-600"><span><i class="fas fa-bed text-gold"></i> 3 Bed</span><span><i class="fas fa-bath text-gold"></i> 2 Bath</span><span><i class="fas fa-expand text-gold"></i> 168 m²</span></div><input type="checkbox" id="t2" class="hidden detail-toggle-chk"><label for="t2" class="lbl-toggle-details">View Details</label><div class="expandable-details-content"><img src="aptf2.jpg" class="w-full"></div></div>
+        <div class="border p-6 shadow-xl"><img src="apt3.jpg" class="w-full h-96 object-cover mb-6"><h4 class="text-2xl font-bold mb-2">Studio Suite</h4><div class="flex gap-4 mb-6 text-gray-600"><span><i class="fas fa-bed text-gold"></i> 1 Bed</span><span><i class="fas fa-bath text-gold"></i> 1 Bath</span><span><i class="fas fa-expand text-gold"></i> 81 m²</span></div><input type="checkbox" id="t3" class="hidden detail-toggle-chk"><label for="t3" class="lbl-toggle-details">View Details</label><div class="expandable-details-content"><img src="aptf3.jpg" class="w-full"></div></div>
+        <div class="border p-6 shadow-xl"><img src="apt4.jpg" class="w-full h-96 object-cover mb-6"><h4 class="text-2xl font-bold mb-2">Modern Flat</h4><div class="flex gap-4 mb-6 text-gray-600"><span><i class="fas fa-bed text-gold"></i> 2 Bed</span><span><i class="fas fa-bath text-gold"></i> 2 Bath</span><span><i class="fas fa-expand text-gold"></i> 134 m²</span></div><input type="checkbox" id="t4" class="hidden detail-toggle-chk"><label for="t4" class="lbl-toggle-details">View Details</label><div class="expandable-details-content"><img src="aptf4.jpg" class="w-full"></div></div>
+        <div class="border p-6 shadow-xl"><img src="apt5.jpg" class="w-full h-96 object-cover mb-6"><h4 class="text-2xl font-bold mb-2">Urban Home</h4><div class="flex gap-4 mb-6 text-gray-600"><span><i class="fas fa-bed text-gold"></i> 2 Bed</span><span><i class="fas fa-bath text-gold"></i> 2 Bath</span><span><i class="fas fa-expand text-gold"></i> 111 m²</span></div><input type="checkbox" id="t5" class="hidden detail-toggle-chk"><label for="t5" class="lbl-toggle-details">View Details</label><div class="expandable-details-content"><img src="aptf5.jpg" class="w-full"></div></div>
     </div>
 </section>
 
-<!-- Why Choose Us -->
 <section id="why-choose-us" class="py-24 px-10 bg-black text-white">
-    <h2 class="text-4xl md:text-5xl font-bold mb-12">BUILT FOR POWER LIVING.</h2>
+    <h2 class="text-4xl font-bold mb-12">BUILT FOR POWER LIVING.</h2>
     <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-        <p class="text-lg">Every property is selected for its architectural identity, location prestige, and dominating presence.</p>
-        <div class="space-y-6">
-            <div><h4 class="text-xl font-bold gold-text">Prime Locations</h4></div>
-            <div><h4 class="text-xl font-bold gold-text">Modern Architecture</h4></div>
-            <div><h4 class="text-xl font-bold gold-text">Private Experience</h4></div>
+        <div>
+            <h4 class="text-2xl font-bold gold-text mb-4">Prime Locations</h4>
+            <p>We secure properties in the most prestigious neighborhoods, ensuring long-term value and an elite lifestyle.</p>
+        </div>
+        <div>
+            <h4 class="text-2xl font-bold gold-text mb-4">Modern Architecture</h4>
+            <p>Our developments feature bold, contemporary designs that serve as a testament to your status and success.</p>
+        </div>
+        <div>
+            <h4 class="text-2xl font-bold gold-text mb-4">Private Experience</h4>
+            <p>We provide exclusive, white-glove consultation services tailored to your specific real estate goals and needs.</p>
         </div>
     </div>
 </section>
 
-<!-- Gallery -->
-<section id="gallery" class="py-24 px-10 text-center">
-    <h2 class="text-4xl font-bold mb-10">Gallery</h2>
-    <div class="grid md:grid-cols-3 gap-6"><video src="vid1.mp4" controls class="w-full"></video><video src="vid2.mp4" controls class="w-full"></video><video src="vid3.mp4" controls class="w-full"></video></div>
-</section>
+<section id="gallery" class="py-24 px-10 text-center"><h2 class="text-4xl font-bold mb-10">Gallery</h2><div class="grid md:grid-cols-3 gap-6"><video src="vid1.mp4" controls class="w-full"></video><video src="vid2.mp4" controls class="w-full"></video><video src="vid3.mp4" controls class="w-full"></video></div></section>
 
-<!-- Footer -->
-<footer id="contact" class="bg-gray-900 text-white p-10 text-center">
-    <p>yosephab09@gmail.com | 0983796622</p>
-</footer>
+<footer id="contact" class="bg-gray-900 text-white p-10 text-center"><p>yosephab09@gmail.com | 0983796622</p></footer>
 
 </body>
 </html>
