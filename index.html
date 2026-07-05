@@ -9,39 +9,92 @@
     <style>
         .gold-text { color: #b8860b; }
         .bg-gold { background-color: #b8860b; }
+        .expandable-details-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .detail-toggle-chk:checked ~ .expandable-details-content { max-height: 1500px; padding-top: 1rem; }
+        .lbl-toggle-details { cursor: pointer; display: block; text-align: center; padding: 1rem; background: #000; color: #fff; font-weight: bold; margin-top: 1rem; }
     </style>
 </head>
-<body>
+<body class="font-sans text-gray-900">
 
-<nav class="fixed w-full bg-white z-50 p-6 flex justify-between items-center border-b border-gray-100 shadow-sm">
+<nav class="fixed w-full bg-white z-50 p-6 flex justify-between items-center border-b shadow-sm">
     <div class="flex items-center gap-6">
-        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-3xl focus:outline-none">
-            ☰
-        </button>
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-3xl">☰</button>
         <span class="text-2xl font-bold tracking-widest gold-text">SUMMER HOMES</span>
     </div>
-    
     <div class="hidden md:flex gap-6 text-2xl">
-        <a href="https://www.facebook.com/share/1DRB4nuGMN/" class="hover:text-gold"><i class="fab fa-facebook"></i></a>
-        <a href="https://vt.tiktok.com/ZSQXwXkve/" class="hover:text-gold"><i class="fab fa-tiktok"></i></a>
-        <a href="https://t.me/yosephab" class="hover:text-gold"><i class="fab fa-telegram"></i></a>
-        <a href="https://wa.me/251983796622" class="hover:text-gold"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook text-blue-800"></i></a>
+        <a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok"></i></a>
+        <a href="https://t.me/yosephab"><i class="fab fa-telegram text-blue-500"></i></a>
+        <a href="https://wa.me/251983796622"><i class="fab fa-whatsapp text-green-600"></i></a>
     </div>
 </nav>
 
-<div id="mobile-menu" class="hidden fixed top-24 w-full bg-white z-40 p-8 text-center border-b shadow-lg transition-all duration-300">
-    <a href="#home" class="block py-6 text-xl border-b border-gray-100" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
-    <a href="#about" class="block py-6 text-xl border-b border-gray-100" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Us</a>
-    <a href="#why-choose-us" class="block py-6 text-xl border-b border-gray-100" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Why Choose Us</a>
-    <a href="#listings" class="block py-6 text-xl border-b border-gray-100" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Listings</a>
-    <a href="#gallery" class="block py-6 text-xl border-b border-gray-100" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Gallery</a>
+<div id="mobile-menu" class="hidden fixed top-24 w-full bg-white z-40 p-8 text-center border-b shadow-lg">
+    <a href="#home" class="block py-4 text-xl border-b" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+    <a href="#about" class="block py-4 text-xl border-b" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Us</a>
+    <a href="#listings" class="block py-4 text-xl border-b" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Listings</a>
+    <a href="#why-choose-us" class="block py-4 text-xl border-b" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Why Choose Us</a>
+    <a href="#gallery" class="block py-4 text-xl border-b" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Gallery</a>
 </div>
 
-<header id="home" class="h-[85vh] w-full flex flex-col items-center justify-center bg-gray-900 text-white text-center p-6" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg'); background-size: cover; background-position: center;">
-    <h1 class="text-5xl md:text-7xl font-bold mb-4">SUMMER HOMES</h1>
-    <p class="text-xl md:text-2xl font-light tracking-widest uppercase">Elevated Luxury Living in Addis Ababa</p>
-    <a href="#listings" class="mt-10 px-8 py-4 bg-gold text-white font-bold hover:bg-black transition-all">VIEW OUR PROPERTIES</a>
+<header id="home" class="h-[80vh] flex flex-col items-center justify-center bg-gray-900 text-white text-center p-6 mt-20">
+    <h1 class="text-6xl font-bold gold-text">SUMMER HOMES</h1>
+    <p class="text-2xl mt-4">Luxury Living in Addis Ababa</p>
 </header>
+
+<section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-5xl font-bold mb-8 gold-text">About Us</h2>
+    <p class="text-2xl text-gray-700">We specialize in premium real estate, curating the finest living spaces in the heart of the city.</p>
+</section>
+
+<section id="listings" class="py-20 px-6 grid md:grid-cols-3 gap-10">
+    <div class="border p-4 shadow-lg">
+        <img src="apt1.jpg" class="w-full h-80 object-cover mb-4">
+        <h4 class="text-2xl font-bold mb-4">Executive Suite</h4>
+        <div class="flex gap-4 mb-4"><i class="fas fa-bed"></i> 3 | <i class="fas fa-bath"></i> 2 | <i class="fas fa-expand"></i> 182 m²</div>
+        <div class="flex gap-6 text-3xl py-4 justify-center">
+            <a href="tel:0983796622"><i class="fas fa-phone"></i></a>
+            <a href="https://wa.me/251983796622"><i class="fab fa-whatsapp text-green-600"></i></a>
+            <a href="https://t.me/yosephab"><i class="fab fa-telegram text-blue-500"></i></a>
+        </div>
+        <input type="checkbox" id="t1" class="hidden detail-toggle-chk">
+        <label for="t1" class="lbl-toggle-details">View Details</label>
+        <div class="expandable-details-content border-t mt-2"><img src="aptf1.jpg" class="w-full"></div>
+    </div>
+</section>
+
+<section id="why-choose-us" class="py-20 px-6 bg-gray-50 text-center">
+    <h2 class="text-5xl font-bold mb-10 gold-text">Why Choose Us</h2>
+    <p class="text-xl">Unmatched location, architectural perfection, and dedicated consulting.</p>
+</section>
+
+<section id="gallery" class="py-20 px-6">
+    <h2 class="text-5xl font-bold text-center mb-10 gold-text">Gallery</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+        <video src="vid1.mp4" controls class="w-full"></video>
+        <video src="vid2.mp4" controls class="w-full"></video>
+        <video src="vid3.mp4" controls class="w-full"></video>
+    </div>
+</section>
+
+<footer class="bg-[#0a1420] text-gray-300 p-10 text-center">
+    <div class="mb-6">
+        <h4 class="text-white font-bold mb-2">Quick Links</h4>
+        <a href="#listings" class="block">Listings</a>
+        <a href="#about" class="block">About Us</a>
+    </div>
+    <div class="mb-6">
+        <h4 class="text-white font-bold mb-2">Contact Us</h4>
+        <p>yosephab09@gmail.com</p>
+        <p>0983796622</p>
+    </div>
+    <div class="text-2xl flex justify-center gap-6">
+        <a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a>
+        <a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok"></i></a>
+        <a href="https://t.me/yosephab"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me/251983796622"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</footer>
 
 </body>
 </html>
