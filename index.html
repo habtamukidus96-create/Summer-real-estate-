@@ -9,10 +9,9 @@
     <style>
         .gold-text { color: #b8860b; }
         .bg-gold { background-color: #b8860b; }
-        /* The checkbox toggles the details-box sibling */
-        .toggle-btn { display: none; }
-        .details-box { display: none; padding: 1.5rem; background: #f9fafb; border-top: 2px solid #b8860b; }
-        .toggle-btn:checked + .details-box { display: block; }
+        .toggle-input { display: none; }
+        .details-content { display: none; padding: 1.5rem; background: #f9fafb; border-top: 2px solid #b8860b; }
+        .toggle-input:checked + .details-content { display: block; }
     </style>
 </head>
 <body class="font-sans text-gray-900 bg-white">
@@ -26,125 +25,126 @@
     <a href="#home">Home</a><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a>
 </div>
 
-<header id="home" class="h-screen flex flex-col items-center justify-center text-white text-center p-10 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');">
-    <h1 class="text-6xl md:text-8xl font-bold mb-6">OWN THE SKYLINE.</h1>
-</header>
-
-<section id="about" class="py-24 px-10 text-center border-b-8 border-gold">
-    <h2 class="text-5xl font-bold mb-8">CRAFTED FOR AMBITION.</h2>
-    <p class="text-2xl max-w-4xl mx-auto text-gray-700 leading-relaxed">Summer Homes redefines luxury in Addis Ababa. We curate elite residential spaces that blend architectural dominance with modern comfort, ensuring your investment stands as a testament to your success.</p>
-</section>
-
-<section id="listings" class="py-24 px-10 bg-white">
+<section id="listings" class="py-24 px-10 bg-white mt-16">
     <h2 class="text-5xl font-bold mb-16 text-center">OUR LISTINGS.</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         
         <div class="border p-6 shadow-xl flex flex-col">
             <img src="apt1.jpg" class="w-full h-[350px] object-cover mb-6">
             <h4 class="text-3xl font-bold mb-4">Executive Suite</h4>
-            <div class="flex gap-6 mb-6 text-xl text-gray-600">
-                <span><i class="fas fa-bed text-gold"></i> 3 Bed</span>
-                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
-                <span><i class="fas fa-expand text-gold"></i> 182 m²</span>
-            </div>
             <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-tiktok"></i></a>
+                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"><i class="fab fa-tiktok"></i></a>
             </div>
-            <input type="checkbox" id="check1" class="toggle-btn">
+            <input type="checkbox" id="check1" class="toggle-input">
             <label for="check1" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
-            <div class="details-box"><img src="aptf1.jpg" class="w-full"></div>
+            <div class="details-content mt-4">
+                <p class="text-xl font-bold gold-text mb-2">Price: 79,000 per m²</p>
+                <h4 class="font-bold mb-2">Advanced Payment Discounts:</h4>
+                <div class="grid grid-cols-2 gap-x-4 text-sm mb-4">
+                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
+                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
+                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
+                </div>
+                <img src="aptf1.jpg" class="w-full">
+            </div>
         </div>
 
         <div class="border p-6 shadow-xl flex flex-col">
             <img src="apt2.jpg" class="w-full h-[350px] object-cover mb-6">
             <h4 class="text-3xl font-bold mb-4">Premium Apt</h4>
-            <div class="flex gap-6 mb-6 text-xl text-gray-600">
-                <span><i class="fas fa-bed text-gold"></i> 3 Bed</span>
-                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
-                <span><i class="fas fa-expand text-gold"></i> 168 m²</span>
-            </div>
             <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-tiktok"></i></a>
+                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"><i class="fab fa-tiktok"></i></a>
             </div>
-            <input type="checkbox" id="check2" class="toggle-btn">
+            <input type="checkbox" id="check2" class="toggle-input">
             <label for="check2" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
-            <div class="details-box"><img src="aptf2.jpg" class="w-full"></div>
+            <div class="details-content mt-4">
+                <p class="text-xl font-bold gold-text mb-2">Price: 79,000 per m²</p>
+                <div class="grid grid-cols-2 gap-x-4 text-sm mb-4">
+                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
+                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
+                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
+                </div>
+                <img src="aptf2.jpg" class="w-full">
+            </div>
         </div>
 
         <div class="border p-6 shadow-xl flex flex-col">
             <img src="apt3.jpg" class="w-full h-[350px] object-cover mb-6">
             <h4 class="text-3xl font-bold mb-4">Studio Suite</h4>
-            <div class="flex gap-6 mb-6 text-xl text-gray-600">
-                <span><i class="fas fa-bed text-gold"></i> 1 Bed</span>
-                <span><i class="fas fa-bath text-gold"></i> 1 Bath</span>
-                <span><i class="fas fa-expand text-gold"></i> 81 m²</span>
-            </div>
             <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-tiktok"></i></a>
+                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"><i class="fab fa-tiktok"></i></a>
             </div>
-            <input type="checkbox" id="check3" class="toggle-btn">
+            <input type="checkbox" id="check3" class="toggle-input">
             <label for="check3" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
-            <div class="details-box"><img src="aptf3.jpg" class="w-full"></div>
+            <div class="details-content mt-4">
+                <p class="text-xl font-bold gold-text mb-2">Price: 79,000 per m²</p>
+                <div class="grid grid-cols-2 gap-x-4 text-sm mb-4">
+                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
+                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
+                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
+                </div>
+                <img src="aptf3.jpg" class="w-full">
+            </div>
         </div>
 
         <div class="border p-6 shadow-xl flex flex-col">
             <img src="apt4.jpg" class="w-full h-[350px] object-cover mb-6">
             <h4 class="text-3xl font-bold mb-4">Modern Flat</h4>
-            <div class="flex gap-6 mb-6 text-xl text-gray-600">
-                <span><i class="fas fa-bed text-gold"></i> 2 Bed</span>
-                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
-                <span><i class="fas fa-expand text-gold"></i> 134 m²</span>
-            </div>
             <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-tiktok"></i></a>
+                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"><i class="fab fa-tiktok"></i></a>
             </div>
-            <input type="checkbox" id="check4" class="toggle-btn">
+            <input type="checkbox" id="check4" class="toggle-input">
             <label for="check4" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
-            <div class="details-box"><img src="aptf4.jpg" class="w-full"></div>
+            <div class="details-content mt-4">
+                <p class="text-xl font-bold gold-text mb-2">Price: 79,000 per m²</p>
+                <div class="grid grid-cols-2 gap-x-4 text-sm mb-4">
+                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
+                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
+                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
+                </div>
+                <img src="aptf4.jpg" class="w-full">
+            </div>
         </div>
 
         <div class="border p-6 shadow-xl flex flex-col">
             <img src="apt5.jpg" class="w-full h-[350px] object-cover mb-6">
             <h4 class="text-3xl font-bold mb-4">Urban Home</h4>
-            <div class="flex gap-6 mb-6 text-xl text-gray-600">
-                <span><i class="fas fa-bed text-gold"></i> 2 Bed</span>
-                <span><i class="fas fa-bath text-gold"></i> 2 Bath</span>
-                <span><i class="fas fa-expand text-gold"></i> 111 m²</span>
-            </div>
             <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:+251922785816" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251922785816" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"><i class="fab fa-tiktok"></i></a>
+                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black hover:bg-black hover:text-white"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600 hover:bg-green-600 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"><i class="fab fa-tiktok"></i></a>
             </div>
-            <input type="checkbox" id="check5" class="toggle-btn">
+            <input type="checkbox" id="check5" class="toggle-input">
             <label for="check5" class="cursor-pointer block text-center py-4 bg-black text-white font-bold hover:bg-gold transition">View Details</label>
-            <div class="details-box"><img src="aptf5.jpg" class="w-full"></div>
+            <div class="details-content mt-4">
+                <p class="text-xl font-bold gold-text mb-2">Price: 79,000 per m²</p>
+                <div class="grid grid-cols-2 gap-x-4 text-sm mb-4">
+                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
+                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
+                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
+                </div>
+                <img src="aptf5.jpg" class="w-full">
+            </div>
         </div>
-        
+
     </div>
 </section>
-
-<section id="why-choose-us" class="py-24 px-10 bg-gray-900 text-white text-center">
-    <h2 class="text-5xl font-bold mb-16">BUILT FOR POWER LIVING.</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="bg-white text-gray-900 p-10 rounded shadow-lg"><i class="fas fa-map-marked-alt text-5xl gold-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Prime Locations</h4><p>We secure properties in the most prestigious neighborhoods for long-term value.</p></div>
-        <div class="bg-white text-gray-900 p-10 rounded shadow-lg"><i class="fas fa-drafting-compass text-5xl gold-text mb-6"></i><h4 class="text-2xl font-bold mb-4">Modern Design</h4><p>Bold, contemporary architecture that serves as a testament to your success.</p></div>
-        <div class="bg-white text-gray-900 p-10 rounded shadow-lg"><i class="fas fa-user-tie text-5xl gold-text mb-6"></i><h4 class="text-2xl font-bold mb-4">White-Glove Service</h4><p>Exclusive consultation tailored to your specific real estate and lifestyle goals.</p></div>
-    </div>
-</section>
-
-<section id="gallery" class="py-24 px-10 text-center"><h2 class="text-5xl font-bold mb-12">Gallery</h2><div class="grid md:grid-cols-3 gap-6"><video src="vid1.mp4" controls class="w-full"></video><video src="vid2.mp4" controls class="w-full"></video><video src="vid3.mp4" controls class="w-full"></video></div></section>
 
 <footer id="contact" class="bg-black text-white p-16 text-center">
-    <div class="flex justify-center gap-8 text-4xl mb-10"><a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a><a href="https://vt.tiktok.com/ZSQXwXkve/"><i class="fab fa-tiktok"></i></a><a href="https://vt.tiktok.com/ZSCpaFP5L/"><i class="fab fa-tiktok"></i></a><a href="https://wa.me/251922785816"><i class="fab fa-whatsapp"></i></a></div>
+    <p class="mb-4 text-xl">yosephab09@gmail.com | 0983796622</p>
+    <div class="flex justify-center gap-8 text-4xl mb-10">
+        <a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a>
+        <a href="https://vt.tiktok.com/ZSCpaFP5L/"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/251983796622"><i class="fab fa-whatsapp"></i></a>
+    </div>
     <p>© 2026 Summer Homes Addis Ababa</p>
 </footer>
 
