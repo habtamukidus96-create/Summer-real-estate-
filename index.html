@@ -6,62 +6,67 @@
     <title>SUMMER HOMES | Luxury Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gold-text { color: #b8860b; }
+        .bg-gold { background-color: #b8860b; }
+        .fancy-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .fancy-table th { background-color: #b8860b; color: white; padding: 8px; border: 1px solid #ddd; }
+        .fancy-table td { padding: 8px; border: 1px solid #ddd; text-align: center; }
+        .fancy-table tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
 </head>
-<body class="font-sans text-gray-900 bg-white">
+<body class="font-sans text-gray-900">
 
-<nav class="fixed top-0 w-full z-50 p-6 flex justify-between items-center text-white bg-black/80 backdrop-blur-md">
+<!-- Header -->
+<nav class="fixed top-0 w-full z-50 p-6 flex justify-between items-center bg-black/90 text-white shadow-lg">
     <span class="text-2xl font-bold tracking-widest">SUMMER HOMES</span>
-    <div class="space-x-6 hidden md:block"><a href="#home">Home</a><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a></div>
+    <button onclick="document.getElementById('mobile-menu').classList.remove('hidden')" class="text-3xl">☰</button>
 </nav>
 
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden fixed inset-0 bg-black z-[60] flex flex-col items-center justify-center text-white text-3xl gap-8" onclick="this.classList.add('hidden')">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a>
+</div>
+
+<!-- Hero -->
 <header id="home" class="h-screen flex flex-col items-center justify-center text-white text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');">
-    <h1 class="text-6xl md:text-8xl font-bold">OWN THE SKYLINE.</h1>
+    <h1 class="text-6xl font-bold">OWN THE SKYLINE.</h1>
 </header>
 
-<section id="about" class="py-24 px-10 text-center border-b-8 border-[#b8860b]">
-    <h2 class="text-5xl font-bold mb-8">CRAFTED FOR AMBITION.</h2>
-    <p class="text-2xl max-w-4xl mx-auto text-gray-700">Summer Homes redefines luxury in Addis Ababa. We curate elite residential spaces that blend architectural dominance with modern comfort.</p>
-</section>
-
-<section id="listings" class="py-24 px-10 bg-gray-50">
+<!-- Listings Section -->
+<section id="listings" class="py-24 px-6 bg-gray-50">
     <h2 class="text-5xl font-bold mb-16 text-center">OUR LISTINGS.</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         
-        <script>
-            function getTable() {
-                return `
-                <table class="w-full text-sm text-center border-collapse border border-gray-300 mt-4">
-                    <thead class="bg-gray-100"><tr><th class="border p-1">Payment</th><th class="border p-1">Discount</th></tr></thead>
-                    <tbody>
-                        <tr><td class="border p-1">20%</td><td class="border p-1">13%</td></tr>
-                        <tr><td class="border p-1">30%</td><td class="border p-1">15%</td></tr>
-                        <tr><td class="border p-1">40%</td><td class="border p-1">17%</td></tr>
-                        <tr><td class="border p-1">50%</td><td class="border p-1">19%</td></tr>
-                        <tr><td class="border p-1">60%</td><td class="border p-1">20%</td></tr>
-                        <tr><td class="border p-1">70%</td><td class="border p-1">21%</td></tr>
-                        <tr><td class="border p-1">80%</td><td class="border p-1">22%</td></tr>
-                        <tr><td class="border p-1">90%</td><td class="border p-1">24%</td></tr>
-                        <tr class="font-bold bg-[#b8860b] text-white"><td class="border p-1">100%</td><td class="border p-1">25%</td></tr>
-                    </tbody>
-                </table>`;
-            }
-        </script>
-
+        <!-- Listing Generator (5 Blocks) -->
         <script>
             const titles = ["Executive Suite", "Premium Apartment", "Studio Suite", "Modern Flat", "Urban Home"];
+            const stats = ["3 Bed | 2 Bath | 182 m²", "2 Bed | 2 Bath | 140 m²", "1 Bed | 1 Bath | 80 m²", "3 Bed | 3 Bath | 200 m²", "4 Bed | 3 Bath | 250 m²"];
+            
             for(let i=1; i<=5; i++) {
                 document.write(`
-                <div class="border p-6 shadow-xl flex flex-col bg-white">
-                    <h4 class="text-3xl font-bold mb-4">${titles[i-1]}</h4>
-                    <div class="flex justify-between gap-2 mb-6">
-                        <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black"><i class="fas fa-phone-alt"></i></a>
-                        <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500"><i class="fab fa-tiktok"></i></a>
+                <div class="border bg-white p-6 shadow-xl">
+                    <img src="apt${i}.jpg" class="w-full h-64 object-cover mb-4">
+                    <h4 class="text-2xl font-bold mb-2">${titles[i-1]}</h4>
+                    <p class="text-gray-500 mb-4">${stats[i-1]}</p>
+                    <div class="flex gap-2 mb-4">
+                        <a href="tel:0983796622" class="flex-1 py-2 text-center border border-black"><i class="fas fa-phone-alt"></i></a>
+                        <a href="https://wa.me/251983796622" class="flex-1 py-2 text-center border border-green-600 text-green-600"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://vm.tiktok.com/ZS9MHb6UN87kB-lIhAF/" class="flex-1 py-2 text-center border border-pink-500 text-pink-500"><i class="fab fa-tiktok"></i></a>
                     </div>
-                    <button onclick="document.getElementById('details${i}').classList.toggle('hidden')" class="py-4 bg-black text-white font-bold hover:bg-[#b8860b]">View Details</button>
-                    <div id="details${i}" class="hidden mt-4 p-4 bg-white border border-[#b8860b]">
-                        <p class="font-bold text-[#b8860b] text-xl">Price: 79,000 per m²</p>
-                        ${getTable()}
+                    <button onclick="document.getElementById('d${i}').classList.toggle('hidden')" class="w-full py-3 bg-black text-white font-bold hover:bg-[#b8860b] transition">View Details</button>
+                    <div id="d${i}" class="hidden mt-4 p-4 border border-[#b8860b]">
+                        <p class="gold-text font-bold text-center">Price: 79,000 per m²</p>
+                        <table class="fancy-table">
+                            <thead><tr><th>Advance</th><th>Discount</th></tr></thead>
+                            <tbody>
+                                <tr><td>20%</td><td>13%</td></tr><tr><td>30%</td><td>15%</td></tr>
+                                <tr><td>40%</td><td>17%</td></tr><tr><td>50%</td><td>19%</td></tr>
+                                <tr><td>60%</td><td>20%</td></tr><tr><td>70%</td><td>21%</td></tr>
+                                <tr><td>80%</td><td>22%</td></tr><tr><td>90%</td><td>24%</td></tr>
+                                <tr style="background:#b8860b; color:white; font-weight:bold;"><td>100%</td><td>25%</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>`);
             }
@@ -69,32 +74,35 @@
     </div>
 </section>
 
-<section id="why" class="py-24 bg-black text-white text-center">
-    <h2 class="text-5xl font-bold mb-16">BUILT FOR POWER LIVING.</h2>
-    <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto px-10">
-        <div class="p-8 border border-[#b8860b]"><i class="fas fa-shield-alt text-4xl mb-4"></i><h4 class="text-xl font-bold">24/7 Security</h4></div>
-        <div class="p-8 border border-[#b8860b]"><i class="fas fa-bolt text-4xl mb-4"></i><h4 class="text-xl font-bold">Standby Generator</h4></div>
-        <div class="p-8 border border-[#b8860b]"><i class="fas fa-elevator text-4xl mb-4"></i><h4 class="text-xl font-bold">Modern Elevator</h4></div>
-        <div class="p-8 border border-[#b8860b]"><i class="fas fa-map-marked-alt text-4xl mb-4"></i><h4 class="text-xl font-bold">Prime Location</h4></div>
+<!-- Amenities -->
+<section id="why" class="py-20 bg-black text-white text-center">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
+        <div><i class="fas fa-shield-alt text-4xl gold-text mb-2"></i><p>24/7 Security</p></div>
+        <div><i class="fas fa-bolt text-4xl gold-text mb-2"></i><p>Standby Generator</p></div>
+        <div><i class="fas fa-elevator text-4xl gold-text mb-2"></i><p>Elevator</p></div>
+        <div><i class="fas fa-map-marked-alt text-4xl gold-text mb-2"></i><p>Prime Location</p></div>
     </div>
 </section>
 
-<section id="gallery" class="py-24 text-center">
-    <h2 class="text-5xl font-bold mb-12">GALLERY</h2>
-    <div class="grid md:grid-cols-3 gap-4 px-10 max-w-7xl mx-auto">
-        <video src="vid1.mp4" controls class="w-full bg-gray-200 h-64"></video>
-        <video src="vid2.mp4" controls class="w-full bg-gray-200 h-64"></video>
-        <video src="vid3.mp4" controls class="w-full bg-gray-200 h-64"></video>
+<!-- Gallery -->
+<section id="gallery" class="py-20 text-center">
+    <h2 class="text-4xl font-bold mb-10">GALLERY</h2>
+    <div class="grid md:grid-cols-3 gap-4 px-6 max-w-7xl mx-auto">
+        <video src="vid1.mp4" controls class="w-full bg-gray-200"></video>
+        <video src="vid2.mp4" controls class="w-full bg-gray-200"></video>
+        <video src="vid3.mp4" controls class="w-full bg-gray-200"></video>
     </div>
 </section>
 
-<footer id="contact" class="bg-gray-900 text-white p-16 text-center">
-    <p class="text-lg mb-6">yosephab09@gmail.com | 0983796622</p>
-    <div class="flex justify-center gap-8 text-4xl">
+<!-- Footer -->
+<footer class="bg-gray-900 text-white p-10 text-center">
+    <p>yosephab09@gmail.com | 0983796622</p>
+    <div class="mt-4 flex justify-center gap-6 text-2xl">
         <a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a>
-        <a href="https://vt.tiktok.com/ZSCpaFP5L/"><i class="fab fa-tiktok"></i></a>
+        <a href="https://vm.tiktok.com/ZS9MHb6UN87kB-lIhAF/"><i class="fab fa-tiktok"></i></a>
         <a href="https://wa.me/251983796622"><i class="fab fa-whatsapp"></i></a>
     </div>
 </footer>
+
 </body>
 </html>
