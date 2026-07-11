@@ -6,18 +6,12 @@
     <title>SUMMER HOMES | Luxury Real Estate</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .gold-text { color: #b8860b; }
-        .bg-gold { background-color: #b8860b; }
-    </style>
 </head>
 <body class="font-sans text-gray-900 bg-white">
 
 <nav class="fixed top-0 w-full z-50 p-6 flex justify-between items-center text-white bg-black/80 backdrop-blur-md">
     <span class="text-2xl font-bold tracking-widest">SUMMER HOMES</span>
-    <div class="space-x-6 hidden md:block">
-        <a href="#home">Home</a><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a>
-    </div>
+    <div class="space-x-6 hidden md:block"><a href="#home">Home</a><a href="#about">About</a><a href="#listings">Listings</a><a href="#contact">Contact</a></div>
 </nav>
 
 <header id="home" class="h-screen flex flex-col items-center justify-center text-white text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg');">
@@ -33,107 +27,74 @@
     <h2 class="text-5xl font-bold mb-16 text-center">OUR LISTINGS.</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
         
-        <div class="border p-6 shadow-xl flex flex-col bg-white">
-            <img src="apt1.jpg" class="w-full h-[300px] object-cover mb-6">
-            <h4 class="text-3xl font-bold mb-4">Executive Suite</h4>
-            <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <button onclick="document.getElementById('details1').classList.toggle('hidden')" class="py-4 bg-black text-white font-bold hover:bg-[#b8860b]">View Details</button>
-            <div id="details1" class="hidden mt-4 p-4 bg-gray-100 border-t-2 border-[#b8860b]">
-                <p class="font-bold text-[#b8860b] text-xl">Price: 79,000 per m²</p>
-                <h4 class="font-bold mt-2">Advanced Payment Discounts:</h4>
-                <div class="grid grid-cols-2 text-sm gap-2 my-2">
-                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
-                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
-                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
-                </div>
-            </div>
-        </div>
+        <script>
+            function getTable() {
+                return `
+                <table class="w-full text-sm text-center border-collapse border border-gray-300 mt-4">
+                    <thead class="bg-gray-100"><tr><th class="border p-1">Payment</th><th class="border p-1">Discount</th></tr></thead>
+                    <tbody>
+                        <tr><td class="border p-1">20%</td><td class="border p-1">13%</td></tr>
+                        <tr><td class="border p-1">30%</td><td class="border p-1">15%</td></tr>
+                        <tr><td class="border p-1">40%</td><td class="border p-1">17%</td></tr>
+                        <tr><td class="border p-1">50%</td><td class="border p-1">19%</td></tr>
+                        <tr><td class="border p-1">60%</td><td class="border p-1">20%</td></tr>
+                        <tr><td class="border p-1">70%</td><td class="border p-1">21%</td></tr>
+                        <tr><td class="border p-1">80%</td><td class="border p-1">22%</td></tr>
+                        <tr><td class="border p-1">90%</td><td class="border p-1">24%</td></tr>
+                        <tr class="font-bold bg-[#b8860b] text-white"><td class="border p-1">100%</td><td class="border p-1">25%</td></tr>
+                    </tbody>
+                </table>`;
+            }
+        </script>
 
-        <div class="border p-6 shadow-xl flex flex-col bg-white">
-            <img src="apt2.jpg" class="w-full h-[300px] object-cover mb-6">
-            <h4 class="text-3xl font-bold mb-4">Premium Apartment</h4>
-            <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <button onclick="document.getElementById('details2').classList.toggle('hidden')" class="py-4 bg-black text-white font-bold hover:bg-[#b8860b]">View Details</button>
-            <div id="details2" class="hidden mt-4 p-4 bg-gray-100 border-t-2 border-[#b8860b]">
-                <p class="font-bold text-[#b8860b] text-xl">Price: 79,000 per m²</p>
-                <h4 class="font-bold mt-2">Advanced Payment Discounts:</h4>
-                <div class="grid grid-cols-2 text-sm gap-2 my-2">
-                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
-                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
-                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="border p-6 shadow-xl flex flex-col bg-white">
-            <img src="apt3.jpg" class="w-full h-[300px] object-cover mb-6">
-            <h4 class="text-3xl font-bold mb-4">Studio Suite</h4>
-            <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <button onclick="document.getElementById('details3').classList.toggle('hidden')" class="py-4 bg-black text-white font-bold hover:bg-[#b8860b]">View Details</button>
-            <div id="details3" class="hidden mt-4 p-4 bg-gray-100 border-t-2 border-[#b8860b]">
-                <p class="font-bold text-[#b8860b] text-xl">Price: 79,000 per m²</p>
-                <h4 class="font-bold mt-2">Advanced Payment Discounts:</h4>
-                <div class="grid grid-cols-2 text-sm gap-2 my-2">
-                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
-                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
-                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="border p-6 shadow-xl flex flex-col bg-white">
-            <img src="apt4.jpg" class="w-full h-[300px] object-cover mb-6">
-            <h4 class="text-3xl font-bold mb-4">Modern Flat</h4>
-            <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <button onclick="document.getElementById('details4').classList.toggle('hidden')" class="py-4 bg-black text-white font-bold hover:bg-[#b8860b]">View Details</button>
-            <div id="details4" class="hidden mt-4 p-4 bg-gray-100 border-t-2 border-[#b8860b]">
-                <p class="font-bold text-[#b8860b] text-xl">Price: 79,000 per m²</p>
-                <h4 class="font-bold mt-2">Advanced Payment Discounts:</h4>
-                <div class="grid grid-cols-2 text-sm gap-2 my-2">
-                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
-                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
-                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="border p-6 shadow-xl flex flex-col bg-white">
-            <img src="apt5.jpg" class="w-full h-[300px] object-cover mb-6">
-            <h4 class="text-3xl font-bold mb-4">Urban Home</h4>
-            <div class="flex justify-between gap-2 mb-6">
-                <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black"><i class="fas fa-phone-alt"></i></a>
-                <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600 text-green-600"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500 text-pink-500"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <button onclick="document.getElementById('details5').classList.toggle('hidden')" class="py-4 bg-black text-white font-bold hover:bg-[#b8860b]">View Details</button>
-            <div id="details5" class="hidden mt-4 p-4 bg-gray-100 border-t-2 border-[#b8860b]">
-                <p class="font-bold text-[#b8860b] text-xl">Price: 79,000 per m²</p>
-                <h4 class="font-bold mt-2">Advanced Payment Discounts:</h4>
-                <div class="grid grid-cols-2 text-sm gap-2 my-2">
-                    <span>20% - 13% disc</span><span>30% - 15% disc</span><span>40% - 17% disc</span>
-                    <span>50% - 19% disc</span><span>60% - 20% disc</span><span>70% - 21% disc</span>
-                    <span>80% - 22% disc</span><span>90% - 24% disc</span><span>100% - 25% disc</span>
-                </div>
-            </div>
-        </div>
+        <script>
+            const titles = ["Executive Suite", "Premium Apartment", "Studio Suite", "Modern Flat", "Urban Home"];
+            for(let i=1; i<=5; i++) {
+                document.write(`
+                <div class="border p-6 shadow-xl flex flex-col bg-white">
+                    <h4 class="text-3xl font-bold mb-4">${titles[i-1]}</h4>
+                    <div class="flex justify-between gap-2 mb-6">
+                        <a href="tel:0983796622" class="flex-1 py-3 text-center border border-black"><i class="fas fa-phone-alt"></i></a>
+                        <a href="https://wa.me/251983796622" class="flex-1 py-3 text-center border border-green-600"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://vt.tiktok.com/ZSCpaFP5L/" class="flex-1 py-3 text-center border border-pink-500"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <button onclick="document.getElementById('details${i}').classList.toggle('hidden')" class="py-4 bg-black text-white font-bold hover:bg-[#b8860b]">View Details</button>
+                    <div id="details${i}" class="hidden mt-4 p-4 bg-white border border-[#b8860b]">
+                        <p class="font-bold text-[#b8860b] text-xl">Price: 79,000 per m²</p>
+                        ${getTable()}
+                    </div>
+                </div>`);
+            }
+        </script>
     </div>
 </section>
 
+<section id="why" class="py-24 bg-black text-white text-center">
+    <h2 class="text-5xl font-bold mb-16">BUILT FOR POWER LIVING.</h2>
+    <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto px-10">
+        <div class="p-8 border border-[#b8860b]"><i class="fas fa-shield-alt text-4xl mb-4"></i><h4 class="text-xl font-bold">24/7 Security</h4></div>
+        <div class="p-8 border border-[#b8860b]"><i class="fas fa-bolt text-4xl mb-4"></i><h4 class="text-xl font-bold">Standby Generator</h4></div>
+        <div class="p-8 border border-[#b8860b]"><i class="fas fa-elevator text-4xl mb-4"></i><h4 class="text-xl font-bold">Modern Elevator</h4></div>
+        <div class="p-8 border border-[#b8860b]"><i class="fas fa-map-marked-alt text-4xl mb-4"></i><h4 class="text-xl font-bold">Prime Location</h4></div>
+    </div>
+</section>
+
+<section id="gallery" class="py-24 text-center">
+    <h2 class="text-5xl font-bold mb-12">GALLERY</h2>
+    <div class="grid md:grid-cols-3 gap-4 px-10 max-w-7xl mx-auto">
+        <video src="vid1.mp4" controls class="w-full bg-gray-200 h-64"></video>
+        <video src="vid2.mp4" controls class="w-full bg-gray-200 h-64"></video>
+        <video src="vid3.mp4" controls class="w-full bg-gray-200 h-64"></video>
+    </div>
+</section>
+
+<footer id="contact" class="bg-gray-900 text-white p-16 text-center">
+    <p class="text-lg mb-6">yosephab09@gmail.com | 0983796622</p>
+    <div class="flex justify-center gap-8 text-4xl">
+        <a href="https://www.facebook.com/share/1DRB4nuGMN/"><i class="fab fa-facebook"></i></a>
+        <a href="https://vt.tiktok.com/ZSCpaFP5L/"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/251983796622"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</footer>
 </body>
 </html>
